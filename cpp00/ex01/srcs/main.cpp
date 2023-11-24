@@ -3,50 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:51:59 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/23 20:46:15 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/11/24 17:54:03 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 /*
-	Gets the command input, and also changes it to uppercase letters.
+	Gets the command input, removes the whitespace from the beginning and end,
+	and also changes it to uppercase letters.
 	Return: The modified string!
  */
-std::string		get_input() {
+static std::string		GetInput(void) {
 	std::string input;
-	std::cout << "Enter a command: ";
-	std::cin >> input;
-	if (input.empty())
-		return ("no input");
-	// if (!std::getline(std::cin, input))
-		return ("no input");
+	std::cout << GREEN << "What can I help you with?" << std::endl << "> " << RESET;
+	std::getline(std::cin, input);
+	int	start = input.find_first_not_of("\n\t\v\r\f");
+	int	end = input.find_last_not_of("\n\t\v\r\f");
 	if (std::cin.eof())
 		return ("EXIT");
+	// printf("%d   %d\n", start, end);
+	if (start == end && start < 0)
+		return (input);
 	for (int i = 0; input[i]; i++)
 		input[i] = std::toupper(input[i]);
-	return (input);
+	return (input.substr(start, end - start + 1));
+}
+
+/*
+	If the command is invalid, it writes an error message,
+	and provides instructions
+*/
+static void	invalid_command(void) {
+	std::cout	<< RED
+				<< "Uh-oh! You seem to be lost in the dgerguri's PhoneBook!"
+				<< RESET << std::endl
+				<< "Please navigate by entering one of these options:" << std::endl
+				<< "	ADD: add a contact," << std::endl
+				<< "	SEARCH: search for a contact," << std::endl
+				<< "	EXIT: exit the dgerguri's PhoneBook." << std::endl;
 }
 
 int	main(void) {
 	PhoneBook	phonebook;
 
-	std::cout	<< "---------------------------------------------" << std::endl
-				<< "|         Welcome to this PhoneBook         |" << std::endl
-				<< "---------------------------------------------" << std::endl;
+	std::cout	<< GREEN
+				<< "---------------------------------------------" << std::endl
+				<< "|     Welcome to dgerguri's PhoneBook!      |" << std::endl
+				<< "---------------------------------------------" << std::endl
+				<< RESET << std::endl;
 	while (1) {
-		std::string input = get_input();
+		std::string input = GetInput();
+		std::cout << input << std::endl;
 		if (input == "EXIT")
 			break ;
 		else if (input == "ADD")
-			std::cout << "ADD" << std::endl;
+		{
+			if (!phonebook.AddContact())
+				break ;
+		}
 		else if (input == "SEARCH")
 			std::cout << "SEARCH" << std::endl;
 		else
-			std::cout << "Invalid command!" << std::endl;
+			invalid_command();
 	}
 	std::cout << "Bye! Thank you for using the PhoneBook!" << std::endl;
 	return (0);
