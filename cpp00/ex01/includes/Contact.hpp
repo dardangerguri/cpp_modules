@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:17:35 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/24 17:58:35 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:24:30 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ class Contact {
 		void	SetNickname(std::string nickname);
 		void	SetPhoneNumber(std::string phonenumber);
 		void	SetSecret(std::string secret);
-
+		std::string	GetFirstName(void);
+		std::string	GetLastName(void);
+		std::string	GetNickname(void);
+		std::string	GetPhoneNumber(void);
+		std::string	GetSecret(void);
 };
 
 # endif

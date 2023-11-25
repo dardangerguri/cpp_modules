@@ -3,22 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:20:17 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/24 18:14:03 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:18:02 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(void) {
-	std::cout << "Contact Constructor Called" << std::endl;
 	return;
 }
 
 Contact::~Contact(void) {
-	std::cout << "Contact Destructor Called" << std::endl;
 	return;
 }
 
@@ -49,4 +47,24 @@ void	Contact::SetPhoneNumber(std::string phone_number) {
 
 void	Contact::SetSecret(std::string secret) {
 	this->secret = secret;
+}
+
+std::string	Contact::GetFirstName(void) {
+	return (this->first_name);
+}
+
+std::string	Contact::GetLastName(void) {
+	return (this->last_name);
+}
+
+std::string	Contact::GetNickname(void) {
+	return (this->nickname);
+}
+
+std::string	Contact::GetPhoneNumber(void) {
+	return (this->phone_number);
+}
+
+std::string	Contact::GetSecret(void) {
+	return (this->secret);
 }

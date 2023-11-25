@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:51:59 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/24 17:54:03 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/11/26 00:20:33 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@
  */
 static std::string		GetInput(void) {
 	std::string input;
-	std::cout << GREEN << "What can I help you with?" << std::endl << "> " << RESET;
+	std::cout << YELLOW << "What can I help you with?" << std::endl << "> " << RESET;
 	std::getline(std::cin, input);
-	int	start = input.find_first_not_of("\n\t\v\r\f");
-	int	end = input.find_last_not_of("\n\t\v\r\f");
+	int	start = input.find_first_not_of(" \n\t\v\r\f");
+	int	end = input.find_last_not_of(" \n\t\v\r\f");
 	if (std::cin.eof())
 		return ("EXIT");
-	// printf("%d   %d\n", start, end);
 	if (start == end && start < 0)
 		return (input);
 	for (int i = 0; input[i]; i++)
@@ -50,14 +49,13 @@ static void	invalid_command(void) {
 int	main(void) {
 	PhoneBook	phonebook;
 
-	std::cout	<< GREEN
+	std::cout	<< YELLOW
 				<< "---------------------------------------------" << std::endl
 				<< "|     Welcome to dgerguri's PhoneBook!      |" << std::endl
 				<< "---------------------------------------------" << std::endl
 				<< RESET << std::endl;
 	while (1) {
 		std::string input = GetInput();
-		std::cout << input << std::endl;
 		if (input == "EXIT")
 			break ;
 		else if (input == "ADD")
@@ -66,7 +64,10 @@ int	main(void) {
 				break ;
 		}
 		else if (input == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
+		{
+			if (!phonebook.SearchContact())
+				break ;
+		}
 		else
 			invalid_command();
 	}
