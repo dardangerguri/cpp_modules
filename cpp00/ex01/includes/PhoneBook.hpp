@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:12:47 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/26 00:15:57 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/10 21:57:00 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class PhoneBook {
 		void			DisplayContacts(void);
 		bool			DisplayContactIndex(void);
 		int				ft_atoi(std::string str);
+		bool			isNumber(std::string str);
 		void			Trimmed(std::string str);
 
 	public:

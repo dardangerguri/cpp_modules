@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:28:44 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/26 00:08:14 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/10 21:57:25 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ bool	PhoneBook::ValidateInformation(std::string input, int type) {
 
 std::string		PhoneBook::GetInput(std::string prompt, int type) {
 	std::string input;
-	while (1)
+	while (1 && this->flag)
 	{
 		std::cout << "Please enter the " << prompt << std::endl << "> ";
 		std::getline(std::cin, input);
@@ -65,7 +65,7 @@ std::string		PhoneBook::GetInput(std::string prompt, int type) {
 		if (std::cin.eof())
 		{
 			this->flag = false;
-			return (NULL);
+			break ;
 		}
 		if (start >= 0)
 			input = input.substr(start, end - start + 1);
@@ -98,6 +98,14 @@ int		PhoneBook::ft_atoi(std::string str) {
 		i++;
 	}
 	return (result * sign);
+}
+
+bool	PhoneBook::isNumber(std::string str) {
+	for (int i = 0; str[i]; i++) {
+		if (!std::isdigit(str[i]))
+			return (false);
+	}
+	return (true);
 }
 
 void	PhoneBook::Trimmed(std::string str) {
@@ -134,7 +142,8 @@ bool	PhoneBook::DisplayContactIndex(void) {
 	if (!this->flag)
 		return (false);
 	index = ft_atoi(input);
-	if (this->contacts[index].GetFirstName().empty()) {
+	printf("index: %d\n", index);
+	if (this->contacts[index].GetFirstName().empty() || !isNumber(input)) {
 		std::cout << RED << "Error: Invalid index." << RESET << std::endl;
 		return (true);
 	}
