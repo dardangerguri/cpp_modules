@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 12:51:20 by dgerguri          #+#    #+#              #
-#    Updated: 2023/11/25 14:48:37 by dardangergu      ###   ########.fr        #
+#    Updated: 2023/12/11 14:03:05 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 NAME	=	testAccount
 
 # Name, compiler, and flags
-CC 		= g++
-CFLAGS	=	#-Werror -Wextra -Wall -std=c++98
+CC 		= 	g++
+CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files
 SRC		=	tests.cpp Account.cpp

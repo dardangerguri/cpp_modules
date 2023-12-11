@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:28:44 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/10 21:57:25 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/11 14:04:00 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,6 @@ bool	PhoneBook::DisplayContactIndex(void) {
 	if (!this->flag)
 		return (false);
 	index = ft_atoi(input);
-	printf("index: %d\n", index);
 	if (this->contacts[index].GetFirstName().empty() || !isNumber(input)) {
 		std::cout << RED << "Error: Invalid index." << RESET << std::endl;
 		return (true);
