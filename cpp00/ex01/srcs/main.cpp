@@ -3,20 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:51:59 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/10 21:46:35 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/12 14:09:31 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-/*
-	Gets the command input, removes the whitespace from the beginning and end,
-	and also changes it to uppercase letters.
-	Return: The modified string!
- */
 static std::string		GetInput(void) {
 	std::string input;
 	std::cout << YELLOW << "What can I help you with?" << std::endl << "> " << RESET;
@@ -32,10 +27,6 @@ static std::string		GetInput(void) {
 	return (input.substr(start, end - start + 1));
 }
 
-/*
-	If the command is invalid, it writes an error message,
-	and provides instructions
-*/
 static void	invalid_command(void) {
 	std::cout	<< RED
 				<< "Uh-oh! You seem to be lost in the dgerguri's PhoneBook!"

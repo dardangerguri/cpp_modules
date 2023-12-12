@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 12:51:20 by dgerguri          #+#    #+#              #
-#    Updated: 2023/11/23 17:26:11 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/12 14:32:04 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/*.hpp
+$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/PhoneBook.hpp ./includes/Contact.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) $(INC_D) -c $< -o $@
 

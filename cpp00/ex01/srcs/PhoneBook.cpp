@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:28:44 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/11 14:04:00 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/12 15:03:41 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,9 +128,8 @@ void	PhoneBook::DisplayContacts(void) {
 		std::cout << std::endl;
 		std::cout	<< "---------------------------------------------"
 					<< std::endl;
-		if (this->contacts[i + 1].GetFirstName().empty())
+		if (i == 7 || this->contacts[i + 1].GetFirstName().empty())
 			break ;
-
 	}
 }
 
@@ -171,6 +170,7 @@ bool	PhoneBook::SearchContact(void) {
 		return (true);
 	}
 	DisplayContacts();
+	// printf("hello\n");
 	if (!DisplayContactIndex())
 		return (false);
 	return (true);
