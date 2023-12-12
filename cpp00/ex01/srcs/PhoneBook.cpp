@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:28:44 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/12 15:03:41 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/12 17:47:35 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,37 +75,16 @@ std::string		PhoneBook::GetInput(std::string prompt, int type) {
 	return (input);
 }
 
-int		PhoneBook::ft_atoi(std::string str) {
-	int		i;
-	int		sign;
-	int		result;
+int		PhoneBook::checkInt(std::string str) {
+	std::stringstream s;
+	s << str;
+	int n;
+	s >> n;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-		sign *= -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (str[i] < '0' || str[i] > '9')
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9' && str[i])
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
-}
-
-bool	PhoneBook::isNumber(std::string str) {
-	for (int i = 0; str[i]; i++) {
-		if (!std::isdigit(str[i]))
-			return (false);
-	}
-	return (true);
+	if (!s.fail())
+		return (n);
+	else
+		return (-1);
 }
 
 void	PhoneBook::Trimmed(std::string str) {
@@ -140,8 +119,8 @@ bool	PhoneBook::DisplayContactIndex(void) {
 	input = GetInput("index of the contact you want to see:", 0);
 	if (!this->flag)
 		return (false);
-	index = ft_atoi(input);
-	if (this->contacts[index].GetFirstName().empty() || !isNumber(input)) {
+	index = checkInt(input);
+	if (index < 0 || index > 7 || this->contacts[index].GetFirstName().empty()) {
 		std::cout << RED << "Error: Invalid index." << RESET << std::endl;
 		return (true);
 	}
@@ -170,7 +149,6 @@ bool	PhoneBook::SearchContact(void) {
 		return (true);
 	}
 	DisplayContacts();
-	// printf("hello\n");
 	if (!DisplayContactIndex())
 		return (false);
 	return (true);

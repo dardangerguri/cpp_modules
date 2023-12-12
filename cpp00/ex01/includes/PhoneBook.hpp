@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:12:47 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/10 21:57:00 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/12 17:46:55 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <sstream>
 # include "Contact.hpp"
 
 # define	GREEN	"\033[0;32m"
@@ -33,8 +34,7 @@ class PhoneBook {
 		bool			ValidateInformation(std::string input, int type);
 		void			DisplayContacts(void);
 		bool			DisplayContactIndex(void);
-		int				ft_atoi(std::string str);
-		bool			isNumber(std::string str);
+		int				checkInt(std::string str);
 		void			Trimmed(std::string str);
 
 	public:
