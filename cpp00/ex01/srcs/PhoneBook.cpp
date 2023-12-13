@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:28:44 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/12 17:47:35 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/13 14:23:06 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 PhoneBook::PhoneBook(void) {
 	this->index = -1;
 	this->flag	= true;
-	return;
 }
 
 PhoneBook::~PhoneBook(void) {
-	return;
 }
 
 bool	PhoneBook::ValidateInformation(std::string input, int type) {
@@ -114,13 +112,13 @@ void	PhoneBook::DisplayContacts(void) {
 
 bool	PhoneBook::DisplayContactIndex(void) {
 	std::string input;
-	int			index;
+	int			index = 0;
 
 	input = GetInput("index of the contact you want to see:", 0);
 	if (!this->flag)
 		return (false);
 	index = checkInt(input);
-	if (index < 0 || index > 7 || this->contacts[index].GetFirstName().empty()) {
+	if (index < 0 || index > 7 || this->contacts[index].GetFirstName().empty() || input.size() > 1) {
 		std::cout << RED << "Error: Invalid index." << RESET << std::endl;
 		return (true);
 	}

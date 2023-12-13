@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:20:17 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/25 19:18:02 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/13 13:46:41 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(void) {
-	return;
 }
 
 Contact::~Contact(void) {
-	return;
 }
 
 void	Contact::SetName(std::string first_name) {
