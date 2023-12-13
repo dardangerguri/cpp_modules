@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:55:23 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/13 14:37:38 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:45:50 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/*.hpp
+$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/HumanA.hpp ./includes/HumanB.hpp ./includes/Weapon.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) $(INC_D) -c $< -o $@
 

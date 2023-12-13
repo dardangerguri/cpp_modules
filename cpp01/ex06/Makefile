@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 17:59:14 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/13 14:38:12 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:46:25 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/*.hpp
+$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/Harl.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) $(INC_D) -c $< -o $@
 
