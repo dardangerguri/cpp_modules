@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/26 00:26:06 by dardangergu       #+#    #+#              #
-#    Updated: 2023/12/10 22:32:08 by dardangergu      ###   ########.fr        #
+#    Updated: 2023/12/13 14:37:22 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	BrainzZ
 
 # Name, compiler, and flags
-CC 		= g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Directories

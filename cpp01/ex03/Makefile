@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:55:23 by dgerguri          #+#    #+#              #
-#    Updated: 2023/11/27 16:56:51 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:37:38 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	Violence
 
 # Name, compiler, and flags
-CC 		= g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Directories

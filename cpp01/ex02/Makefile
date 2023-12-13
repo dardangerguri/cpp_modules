@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:26:30 by dgerguri          #+#    #+#              #
-#    Updated: 2023/11/27 16:27:29 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:37:29 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	BRAIN
 
 # Name, compiler, and flags
-CC 		= 	g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files

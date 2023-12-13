@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 17:59:14 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/01 14:22:40 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:38:07 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	Harl
 
 # Name, compiler, and flags
-CC 		= g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Directories

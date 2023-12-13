@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 15:00:18 by dgerguri          #+#    #+#              #
-#    Updated: 2023/11/29 15:00:37 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:37:47 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	SED_LOSER
 
 # Name, compiler, and flags
-CC 		= 	g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files
