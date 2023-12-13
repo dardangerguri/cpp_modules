@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:57:54 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/11/29 14:28:36 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:12:50 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ HumanA::~HumanA(void) {
 }
 
 void	HumanA::attack(void) {
-	std::cout 	<< this->name << " attacks with his " << this->weapon.getType()
-				<< std::endl;
+	std::cout 	<< BLUE << this->name << " attacks with his "
+				<< this->weapon.getType() << RESET << std::endl;
 }
