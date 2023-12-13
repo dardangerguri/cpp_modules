@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 12:49:37 by dgerguri          #+#    #+#              #
-#    Updated: 2023/11/23 16:44:31 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:31:14 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	megaphone
 
 # Name, compiler, and flags
-CC 		= 	g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files

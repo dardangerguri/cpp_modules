@@ -6,7 +6,7 @@
 #    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 12:51:20 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/12 14:32:04 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/13 14:31:27 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	PhoneBook
 
 # Name, compiler, and flags
-CC 		= g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Directories
