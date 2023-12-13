@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:33:19 by dardangergu       #+#    #+#             */
-/*   Updated: 2023/12/10 22:38:50 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/13 14:51:35 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Zombie.hpp"
 
 Zombie::Zombie(void) {
+	std::cout 	<< BLUE << "Zombie created!" << RESET << std::endl;
 }
 
 
