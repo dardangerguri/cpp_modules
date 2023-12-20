@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
+#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:26:30 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/11 14:14:42 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/20 10:35:21 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	FIXED
 
 # Name, compiler, and flags
-CC 		= 	g++
+CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files
@@ -35,7 +35,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: %.cpp
+$(OBJ_D)%.o: %.cpp Fixed.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
