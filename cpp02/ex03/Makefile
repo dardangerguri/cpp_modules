@@ -3,22 +3,22 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:26:30 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/20 10:44:25 by dardangergu      ###   ########.fr        #
+#    Updated: 2023/12/20 14:38:52 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output binary name
-NAME	=	FIXED
+NAME	=	bsp
 
 # Name, compiler, and flags
 CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files
-SRC		=	main.cpp Fixed.cpp Point.cpp
+SRC		=	main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 # Object files
 OBJ_D	=	obj/
