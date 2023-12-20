@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:12:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/20 10:37:18 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/20 15:29:28 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ Fixed::~Fixed(void) {
 }
 
 Fixed & Fixed::operator=(const Fixed & copy) {
-	if (this == &copy)
-		return (*this);
-	this->fixedNbr = copy.getRawBits();
+	if (this != &copy) {
+		this->fixedNbr = copy.getRawBits();
+	}
 	return (*this);
 }
 

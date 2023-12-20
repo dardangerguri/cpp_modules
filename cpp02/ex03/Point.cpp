@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:12:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/20 12:51:16 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:31:14 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ Point::~Point(void) {
 }
 
 Point & Point::operator=(const Point & copy) {
-	if (this == &copy)
-		return (*this);
+	(void)copy;
 	return (*this);
 }
 
