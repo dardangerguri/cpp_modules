@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:27:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 10:59:14 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/21 15:47:39 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void) {
-	ClapTrap	a("Dardan");
+	ScavTrap	a("Dardan");
 
 	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
 			<< ", Hit Points " << a.getHitPoints()
 			<< ", Attack Damage " << a.getAttackDamage()  << "!"
 			<< RESET << std::endl;
 
-	a.attack("Dardan");
-	a.attack("Dardan");
-	a.attack("Dardan");
 	a.attack("Dardan");
 	a.attack("Dardan");
 	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
@@ -35,6 +32,10 @@ int	main(void) {
 			<< ", Attack Damage " << a.getAttackDamage()  << "!"
 			<< RESET << std::endl;
 	a.beRepaired(10);
+	a.guardGate();
+	a.guardGate();
+	a.guardGate();
+	a.guardGate();
 	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
 		<< ", Hit Points " << a.getHitPoints()
 		<< ", Attack Damage " << a.getAttackDamage()  << "!"

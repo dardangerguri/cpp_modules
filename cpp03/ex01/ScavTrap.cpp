@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:12:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 11:36:21 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/21 15:47:30 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & copy) {
 	return (*this);
 }
 
-void ClapTrap::attack(const std::string& target) {
+void ScavTrap::attack(const std::string& target) {
 	if (this->hitPoints == 0 || this->energyPoints == 0) {
-			std::cout 	<< "ClapTrap " << this->name << " cannot attack " << target
+			std::cout 	<< "ScavTrap " << this->name << " cannot attack " << target
 		<< ", because it either has no energy or hit points!" << std::endl;
 		return ;
 	}
 	this->energyPoints--;
-	std::cout 	<< "ClapTrap " << this->name << " attacks " << target
+	std::cout 	<< "ScavTrap " << this->name << " attacks " << target
 		<< ", causing " << this->attackDamage << " points of damage!" << std::endl;
 }
 
