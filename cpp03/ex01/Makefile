@@ -6,7 +6,7 @@
 #    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:26:30 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/21 11:13:44 by dardangergu      ###   ########.fr        #
+#    Updated: 2023/12/21 11:13:40 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
 
 # Source files
-SRC		=	main.cpp ClapTrap.cpp
+SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp
 
 # Object files
 OBJ_D	=	obj/
@@ -35,7 +35,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: %.cpp ClapTrap.hpp
+$(OBJ_D)%.o: %.cpp ClapTrap.hpp ScavTrap.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 

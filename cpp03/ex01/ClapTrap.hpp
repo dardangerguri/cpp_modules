@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:14:55 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 11:09:11 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/21 11:31:31 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ class	ClapTrap {
 		unsigned int	getEnergyPoints(void) const;
 		unsigned int	getAttackDamage(void) const;
 
-	private:
+	protected:
+
 		std::string		name;
 		unsigned int	hitPoints;
 		unsigned int	energyPoints;
