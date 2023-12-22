@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:12:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/20 15:31:14 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:46:50 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Point::Point(void) : x(0), y(0) {
 }
 
-Point::Point(Fixed const x, Fixed const y) : x(x), y(y) {
+Point::Point(float const x, float const y) : x(x), y(y) {
 }
 
 Point::Point(Point const & copy) : x(copy.getX()), y(copy.getY()) {

@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:14:55 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/20 12:44:59 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/22 15:47:16 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Point
 {
 	public:
 		Point(void);
-		Point(Fixed const x, Fixed const y);
+		Point(float const x, float const y);
 		Point(Point const & copy);
 		~Point(void);
 
