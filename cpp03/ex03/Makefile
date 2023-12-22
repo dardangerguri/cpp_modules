@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
+#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 16:26:30 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/21 16:19:20 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/22 11:18:33 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	=	trap
 
 # Name, compiler, and flags
 CC 		= 	c++
-CFLAGS	=	-Werror -Wextra -Wall -std=c++98
+CFLAGS	=	-Werror -Wextra -Wall -std=c++98 -Wshadow -Wno-shadow
 
 # Source files
 SRC		=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
