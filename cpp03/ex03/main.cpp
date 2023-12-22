@@ -3,43 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:27:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 16:05:40 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/22 11:12:16 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void) {
-	FragTrap	a("Dardan");
-
-	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
-			<< ", Hit Points " << a.getHitPoints()
-			<< ", Attack Damage " << a.getAttackDamage()  << "!"
-			<< RESET << std::endl;
-
+	DiamondTrap a("Dardan");
 	a.attack("Dardan");
-	a.attack("Dardan");
-	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
-			<< ", Hit Points " << a.getHitPoints()
-			<< ", Attack Damage " << a.getAttackDamage()  << "!"
-			<< RESET << std::endl;
-	a.takeDamage(5);
-	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
-			<< ", Hit Points " << a.getHitPoints()
-			<< ", Attack Damage " << a.getAttackDamage()  << "!"
-			<< RESET << std::endl;
-	a.beRepaired(10);
+	a.ClapTrap::attack("Dardan");
+	a.beRepaired(0);
+	a.takeDamage(0);
+	a.whoAmI();
+	a.guardGate();
 	a.highFivesGuys();
-	a.highFivesGuys();
-	a.highFivesGuys();
-	a.highFivesGuys();
-	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
-		<< ", Hit Points " << a.getHitPoints()
-		<< ", Attack Damage " << a.getAttackDamage()  << "!"
-		<< RESET << std::endl;
+	return (0);
 }
 
