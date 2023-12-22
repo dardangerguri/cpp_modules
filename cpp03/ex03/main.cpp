@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:27:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/22 11:12:16 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/22 18:57:44 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 
 int	main(void) {
 	DiamondTrap a("Dardan");
+	std::cout << RED <<  "Energy Points " << a.getEnergyPoints()
+	<< ", Hit Points " << a.getHitPoints()
+	<< ", Attack Damage " << a.getAttackDamage()  << "!"
+	<< RESET << std::endl;
 	a.attack("Dardan");
 	a.ClapTrap::attack("Dardan");
 	a.beRepaired(0);

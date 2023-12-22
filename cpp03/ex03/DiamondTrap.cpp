@@ -12,19 +12,18 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap() {
+DiamondTrap::DiamondTrap(void) {
 	std::cout << "DiamondTrap default constructor called!" << std::endl;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap().getHitPoints();
+	this->energyPoints = ScavTrap().getEnergyPoints();
+	this->attackDamage = FragTrap().getAttackDamage();
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"),
-	ScavTrap(name + "_scav_name"), FragTrap(name + "_frag_name"), name(name) {
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), name(name) {
 	std::cout << "A DiamondTrap with name " << this->name << " was constructed!" << std::endl;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
+	this->hitPoints = FragTrap().getHitPoints();
+	this->energyPoints = ScavTrap().getEnergyPoints();
+	this->attackDamage = FragTrap().getAttackDamage();
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & copy) : ClapTrap(), ScavTrap(), FragTrap() {
