@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:12:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 11:17:27 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/22 16:05:18 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ ClapTrap & ClapTrap::operator=(const ClapTrap & copy) {
 	}
 	return (*this);
 }
-
 
 std::string	ClapTrap::getName(void) const {
 	return (this->name);

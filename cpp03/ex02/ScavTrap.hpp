@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:14:55 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 11:34:36 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/22 16:06:49 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class	ScavTrap : public ClapTrap {
 		void	guardGate(void);
 
 	private:
-
 };
 
 # endif

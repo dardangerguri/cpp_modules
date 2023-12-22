@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:14:55 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 17:07:14 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:07:01 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class	ScavTrap : virtual public ClapTrap {
 		void	guardGate(void);
 
 	protected:
-
 };
 
 # endif

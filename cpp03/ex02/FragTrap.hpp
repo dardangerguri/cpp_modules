@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:14:55 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 16:03:41 by dgerguri         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:06:43 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class	FragTrap : public ClapTrap {
 		void 	highFivesGuys(void);
 
 	private:
-
 };
 
 # endif
