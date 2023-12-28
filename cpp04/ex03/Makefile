@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 17:59:14 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/28 14:32:28 by dardangergu      ###   ########.fr        #
+#    Updated: 2023/12/28 16:14:55 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC_D	=	srcs/
 OBJ_D	=	obj/
 
 # Source files
-SRC		=	main.cpp
+SRC		=	main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 
 # Object files
 OBJ		=	$(SRC:.cpp=.o)
@@ -41,7 +41,9 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: $(SRC_D)%.cpp
+$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/AMateria.hpp ./includes/Ice.hpp \
+	./incldues/Cure.hpp ./includes/Character.hpp ./includes/ICharacter.hpp
+	./includes/MateriaSource.hpp ./includes/IMateriaSource.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) $(INC_D) -c $< -o $@
 
