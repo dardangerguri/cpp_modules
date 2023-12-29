@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
+#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 17:59:14 by dgerguri          #+#    #+#              #
-#    Updated: 2023/12/28 16:14:55 by dgerguri         ###   ########.fr        #
+#    Updated: 2023/12/29 02:08:50 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output binary name
-NAME	=	Animal
+NAME	=	materia
 
 # Name, compiler, and flags
 CC 		= 	c++
@@ -41,9 +41,8 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/AMateria.hpp ./includes/Ice.hpp \
-	./incldues/Cure.hpp ./includes/Character.hpp ./includes/ICharacter.hpp
-	./includes/MateriaSource.hpp ./includes/IMateriaSource.hpp
+$(OBJ_D)%.o: $(SRC_D)%.cpp	./includes/AMateria.hpp ./includes/Ice.hpp ./includes/Cure.hpp \
+		./includes/Character.hpp ./includes/MateriaSource.hpp ./includes/IMateriaSource.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) $(INC_D) -c $< -o $@
 

@@ -17,10 +17,10 @@ AMateria::AMateria(void) {
 	this->type = "Unknown AMateria";
 }
 
-AMateria::AMateria(std::string const & type) : type(type) {
+AMateria::AMateria(std::string const & type) {
 	std::cout << "AMateria type constructor called!" << std::endl;
+	this->type = type;
 }
-// CHECK IF I CAN DO IT INSIDE THE INITIALIZATION LIST
 
 AMateria::AMateria(AMateria const & copy) {
 	std::cout << "AMateria copy constructor called!" << std::endl;
@@ -46,3 +46,4 @@ std::string const &AMateria::getType(void) const {
 void AMateria::use(ICharacter & target) {
 	std::cout << "Unknown Materia used on " << target.getName() << " *" << std::endl;
 }
+//check this again!

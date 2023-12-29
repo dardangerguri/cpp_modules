@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                         :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,39 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 
-AMateria::AMateria(void) {
-	std::cout << "AMateria default constructor called!" << std::endl;
-	this->type = "Unknown AMateria";
+MateriaSource::MateriaSource(void) {
+	std::cout << "MateriaSource default constructor called!" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->inventory[i] = NULL;
 }
 
-AMateria::AMateria(std::string const & type) : type(type) {
-	std::cout << "AMateria type constructor called!" << std::endl;
-}
-// CHECK IF I CAN DO IT INSIDE THE INITIALIZATION LIST
-
-AMateria::AMateria(AMateria const & copy) {
-	std::cout << "AMateria copy constructor called!" << std::endl;
+MateriaSource::MateriaSource(MateriaSource const & copy) {
+	std::cout << "MateriaSource copy constructor called!" << std::endl;
 	*this = copy;
+	for (int i = 0; i < 4; i++)
+		this->inventory[i] = copy.inventory[i]->clone();
 }
 
-AMateria::~AMateria(void) {
-	std::cout << "AMateria destructor called!" << std::endl;
+MateriaSource::~MateriaSource(void) {
+	std::cout << "MateriaSource destructor called!" << std::endl;
+	for (int i = 0; i < 4; i++)
+		if (this->inventory[i] != NULL)
+			delete this->inventory[i];
 }
 
-AMateria & AMateria::operator=(const AMateria & copy) {
-	std::cout << "AMateria copy assignment operator called!" << std::endl;
-	if (this != &copy) {
-		this->type = copy.type;
+MateriaSource & MateriaSource::operator=(const MateriaSource & copy) {
+	std::cout << "MateriaSource copy assignment operator called!" << std::endl;
+	if (this != &copy)
+	{
+		for (int i = 0; i < 4; i++)
+			delete this->inventory[i];
+		for (int i = 0; i < 4; i++)
+			this->inventory[i] = copy.inventory[i]->clone();
 	}
 	return (*this);
 }
 
-std::string const &AMateria::getType(void) const {
-	return (this->type);
+void		MateriaSource::learnMateria(AMateria * m) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i] == NULL)
+		{
+			this->inventory[i] = m;
+			break ;
+		}
+	}
 }
 
-void AMateria::use(ICharacter & target) {
-	std::cout << "Unknown Materia used on " << target.getName() << " *" << std::endl;
+AMateria*	MateriaSource::createMateria(std::string const & type) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i] != NULL && this->inventory[i]->getType() == type)
+			return (this->inventory[i]->clone());
+	}
+	return (NULL);
 }

@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:59:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/28 14:22:03 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/29 01:11:27 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
 # include <iostream>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class	Character : public ICharacter {
+class	Cure : public AMateria {
 
 	public:
 
-		Character(void);
-		Character(std::string const & name);
-		Character(Character const & copy);
-		~Character(void);
+		Cure(void);
+		Cure(Cure const & copy);
+		~Cure(void);
 
-		Character & operator=(const Character & copy);
+		Cure & operator=(const Cure & copy);
 
-		void setName(std::string const & name);
-		std::string const & getName(void) const;
-
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
+		AMateria*	clone(void) const;
+		void		use(ICharacter& target);
 
 	private:
 
-		std::string		name;
-		AMateria*		inventory[4];
 };
 
 # endif

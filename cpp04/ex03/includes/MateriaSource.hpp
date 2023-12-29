@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:59:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/28 14:22:03 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/29 02:06:28 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
-# include "ICharacter.hpp"
+# include "IMateriaSource.hpp"
 
-class	Character : public ICharacter {
+class	MateriaSource : public IMateriaSource {
 
 	public:
 
-		Character(void);
-		Character(std::string const & name);
-		Character(Character const & copy);
-		~Character(void);
+		MateriaSource(void);
+		MateriaSource(MateriaSource const & copy);
+		~MateriaSource(void);
 
-		Character & operator=(const Character & copy);
+		MateriaSource & operator=(const MateriaSource & copy);
 
-		void setName(std::string const & name);
-		std::string const & getName(void) const;
-
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, ICharacter& target);
+		void		learnMateria(AMateria * m);
+		AMateria*	createMateria(std::string const & type);
 
 	private:
 
-		std::string		name;
 		AMateria*		inventory[4];
 };
 
