@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:16:26 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/29 12:41:12 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/29 18:34:35 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ int main()
     test->learnMateria(new Cure());
 
 	std::cout << RED << "The stock should be full now!" << RESET << std::endl;
-	test->learnMateria(new Cure());
-	test->learnMateria(new Ice());
+	// test->learnMateria(new Cure());
+	// test->learnMateria(new Ice());
 
-    AMateria* temp = new Ice();
-    test->learnMateria(temp);
-    delete temp;
+    // AMateria* temp = new Ice();
+    // test->learnMateria(temp);
+	// delete (temp);
 	std::cout << std::endl;
 
 	std::cout << YELLOW << "Let's create a Character and equip some materia!"
@@ -74,12 +74,14 @@ int main()
     a->equip(test->createMateria("cure"));
     a->equip(test->createMateria("ice"));
 
-    temp = test->createMateria("cure");
+	a->equip(test->createMateria("ice"));
 
-    a->equip(temp);
+	Character *d = new Character("d");
+	AMateria *dlt = d->getInventory(1);
+	std::cout << RED << "INVENTORY " << dlt << RESET << std::endl;
     a->unequip(1);
-    a->equip(temp);
-    delete cure;
+    // a->equip(temp);
+	delete dlt;
 	std::cout << std::endl;
 
 	std::cout << YELLOW << "Let's use some materia!" << RESET << std::endl << std::endl;
@@ -91,12 +93,10 @@ int main()
     b->use(-1, *a);
 	b->use(0, *a);
 	b->use(1, *a);
-	delete temp;
 	std::cout << std::endl;
 
-    delete a;
-    delete b;
     delete test;
-
+	delete a;
+	delete b;
 	return 0;
 }

@@ -46,4 +46,3 @@ std::string const &AMateria::getType(void) const {
 void AMateria::use(ICharacter & target) {
 	std::cout << "Unknown Materia used on " << target.getName() << " *" << std::endl;
 }
-//check this again!

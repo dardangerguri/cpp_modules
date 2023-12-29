@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:59:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/29 00:58:53 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/29 15:15:27 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
