@@ -50,16 +50,20 @@ void		MateriaSource::learnMateria(AMateria * m) {
 		if (this->inventory[i] == NULL)
 		{
 			this->inventory[i] = m;
-			break ;
+			return ;
 		}
 	}
+	std::cout << "MateriaSource inventory full! Cannot learn the materia!" << std::endl;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->inventory[i] != NULL && this->inventory[i]->getType() == type)
+		if (this->inventory[i] != NULL && this->inventory[i]->getType() == type) {
+			std::cout << "Materia " << type << " created!" << std::endl;
+		}
 			return (this->inventory[i]->clone());
 	}
+	std::cout << "MateriaSource inventory empty! Cannot create the materia!" << std::endl;
 	return (NULL);
 }
