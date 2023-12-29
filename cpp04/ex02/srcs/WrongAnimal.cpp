@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:00:02 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/27 21:10:21 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/29 15:38:35 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ WrongAnimal::WrongAnimal(void) {
 	this->type = "Unknown Animal";
 }
 
-WrongAnimal::WrongAnimal(std::string type) : type(type) {
+WrongAnimal::WrongAnimal(std::string type) {
 	std::cout << "WrongAnimal type constructor called!" << std::endl;
+	this->type = type;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const & copy) {

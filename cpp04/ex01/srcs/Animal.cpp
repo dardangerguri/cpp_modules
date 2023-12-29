@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:00:02 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/27 21:10:15 by dardangergu      ###   ########.fr       */
+/*   Updated: 2023/12/29 15:36:23 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ Animal::Animal(void) {
 	this->type = "Unknown Animal";
 }
 
-Animal::Animal(std::string type) : type(type) {
+Animal::Animal(std::string type) {
 	std::cout << "Animal type constructor called!" << std::endl;
+	this->type = type;
 }
 
 Animal::Animal(Animal const & copy) {
