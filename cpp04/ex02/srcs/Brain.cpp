@@ -36,7 +36,7 @@ Brain & Brain::operator=(const Brain & copy) {
 
 std::string	Brain::getIdea(unsigned int i) {
 	if (i <= 100)
-		return (this->ideas[i - 1]);
+		return (this->ideas[i]);
 	else {
 		return ("Error: No idea is available!");
 	}
@@ -44,7 +44,7 @@ std::string	Brain::getIdea(unsigned int i) {
 
 void	Brain::setIdea(std::string idea, unsigned int i) {
 	if (i <= 100)
-		this->ideas[i - 1] = idea;
+		this->ideas[i] = idea;
 	else
 		std::cout << "Error: Brain is full!" << std::endl;
 }
