@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:53:05 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 13:03:38 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/01/02 15:15:22 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include "Fixed.hpp"
 
 static	Fixed	getTriangleArea(Point const a, Point const b, Point const c) {
-	Fixed area = (a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY())
-				+ c.getX() * (a.getY() - b.getY())) / 2;
+	Fixed area = a.getX() * (b.getY() - c.getY()) + b.getX() * (c.getY() - a.getY())
+				+ c.getX() * (a.getY() - b.getY()) / 2;
 	if (area < 0)
-		area = area * -1;
+		area = area.toFloat() * -1.0f;
 	return (area);
 }
 
@@ -27,7 +27,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed	areaAPC = getTriangleArea(a, point, c);
 	Fixed 	areaBPC = getTriangleArea(b, point, c);
 
-	if (areaTriangle == (areaAPB + areaAPC + areaBPC) && areaAPB != 0
+	if (areaTriangle >= (areaAPB + areaAPC + areaBPC) && areaAPB != 0
 		&& areaAPC != 0 && areaBPC != 0)
 		return (true);
 	return (false);

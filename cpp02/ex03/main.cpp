@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:27:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/21 10:32:43 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/02 15:15:43 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,22 @@ void test4Float() {
 		std::cout << RED << "IT IS NOT INSIDE!" << RESET << std::endl;
 }
 
+void test5Float() {
+	Point const a(2.68f, -2.35f);
+	Point const b(8.32f, -3.63f);
+	Point const c(4.82f, -3.83f);
+	Point const p(4.44f, -3.33f);
+	if (bsp(a, b, c, p) == true)
+		std::cout << GREEN << "IT IS INSIDE!" << RESET << std::endl;
+	else
+		std::cout << RED << "IT IS NOT INSIDE!" << RESET << std::endl;
+}
+
 int	main( void ) {
 	test1();
 	test2();
 	test3Float();
 	test4Float();
+	test5Float();
 }
 
