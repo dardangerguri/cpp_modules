@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
+#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 16:05:53 by dgerguri          #+#    #+#              #
-#    Updated: 2024/01/02 16:06:31 by dgerguri         ###   ########.fr        #
+#    Updated: 2024/01/08 09:36:56 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	=	bureaucrat
 
 # Name, compiler, and flags
 CC 		= 	c++
-CFLAGS	=	-Werror -Wextra -Wall -std=c++98
+CFLAGS	=	-Werror -Wextra -Wall
 
 # Source files
 SRC		=	main.cpp Bureaucrat.cpp
