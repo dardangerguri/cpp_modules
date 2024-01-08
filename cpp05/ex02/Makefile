@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 16:05:53 by dgerguri          #+#    #+#              #
-#    Updated: 2024/01/08 10:00:27 by dardangergu      ###   ########.fr        #
+#    Updated: 2024/01/08 13:08:25 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CC 		= 	c++
 CFLAGS	=	-Werror -Wextra -Wall
 
 # Source files
-SRC		=	main.cpp Bureaucrat.cpp Form.cpp
+SRC		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 # Object files
 OBJ_D	=	obj/
@@ -35,7 +36,8 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: %.cpp Bureaucrat.hpp Form.hpp
+$(OBJ_D)%.o: %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
+		RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
