@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/08 09:56:17 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/15 14:34:28 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class	Bureaucrat {
 
 		Bureaucrat & operator=(const Bureaucrat & copy);
 
-		std::string const	getName(void) const;
+		std::string const & getName(void) const;
 		int					getGrade(void) const;
 
 		void				incrementGrade(void);
@@ -54,6 +54,6 @@ class	Bureaucrat {
 		int					grade;
 };
 
-	std::ostream	&operator<<(std::ostream &os, Bureaucrat *target);
+	std::ostream	&operator<<(std::ostream &os, Bureaucrat &target);
 
 # endif
