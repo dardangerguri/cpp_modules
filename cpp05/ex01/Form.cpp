@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/08 10:29:56 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/15 15:41:34 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,15 @@ Form & Form::operator=(const Form & copy) {
 	return (*this);
 }
 
-std::string const	Form::getName(void) const {
+std::string const & Form::getName(void) const {
 	return (this->name);
 }
 
-bool				Form::getIsSigned(void) const {
-	return (this->isSigned);
+std::string	Form::getIsSigned(void) const {
+	if (this->isSigned == true)
+		return ("Form is signed!");
+	else
+		return ("Form is not signed!");
 }
 
 int					Form::getGradeToSign(void) const {
@@ -78,10 +81,9 @@ const char *Form::FormAlreadySignedException::what() const throw() {
 	return ("Form already signed!");
 }
 
-std::ostream	&operator<<(std::ostream &os, Form *target) {
-	os << target->getName() << std::endl;
-	os << "Form is signed: " << target->getIsSigned() << std::endl;
-	os << "Form grade to sign: " << target->getGradeToSign() << std::endl;
-	os << "Form grade to exec: " << target->getGradeToExec() << std::endl;
+std::ostream	&operator<<(std::ostream &os, Form &target) {
+	os << target.getName() << " " << target.getIsSigned() << std::endl;
+	os << "Form grade to sign: " << target.getGradeToSign() << std::endl;
+	os << "Form grade to exec: " << target.getGradeToExec() << std::endl;
 	return (os);
 }

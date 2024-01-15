@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/08 10:14:55 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/15 15:15:50 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ class	Form {
 
 		Form & operator=(const Form & copy);
 
-		std::string const	getName(void) const;
-		bool				getIsSigned(void) const;
+		std::string const & getName(void) const;
+		std::string			getIsSigned(void) const;
 		int					getGradeToSign(void) const;
 		int					getGradeToExec(void) const;
 
@@ -64,6 +64,6 @@ class	Form {
 		int	const			gradeToExec;
 };
 
-	std::ostream	&operator<<(std::ostream &os, Form *target);
+	std::ostream	&operator<<(std::ostream &os, Form &target);
 
 # endif
