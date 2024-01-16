@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/15 15:41:34 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/15 16:50:22 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ std::string	Form::getIsSigned(void) const {
 		return ("Form is not signed!");
 }
 
-int					Form::getGradeToSign(void) const {
+int	Form::getGradeToSign(void) const {
 	return (this->gradeToSign);
 }
 
-int					Form::getGradeToExec(void) const {
+int	Form::getGradeToExec(void) const {
 	return (this->gradeToExec);
 }
 
-void				Form::beSigned(Bureaucrat & target) {
+void	Form::beSigned(Bureaucrat & target) {
 	if (target.getGrade() > this->gradeToSign)
 		throw Form::GradeTooLowException();
 	else if (this->isSigned == true)
@@ -69,15 +69,15 @@ void				Form::beSigned(Bureaucrat & target) {
 		this->isSigned = true;
 }
 
-const char *Form::GradeTooHighException::what() const throw() {
+const char	*Form::GradeTooHighException::what() const throw() {
 	return ("Grade too high!");
 }
 
-const char *Form::GradeTooLowException::what() const throw() {
+const char	*Form::GradeTooLowException::what() const throw() {
 	return ("Grade too low!");
 }
 
-const char *Form::FormAlreadySignedException::what() const throw() {
+const char	*Form::FormAlreadySignedException::what() const throw() {
 	return ("Form already signed!");
 }
 

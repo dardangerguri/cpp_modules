@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/15 14:47:34 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/15 16:49:25 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ std::string const & Bureaucrat::getName(void) const {
 	return (this->name);
 }
 
-int					Bureaucrat::getGrade(void) const {
+int	Bureaucrat::getGrade(void) const {
 	return (this->grade);
 }
 
-void				Bureaucrat::incrementGrade(void) {
+void	Bureaucrat::incrementGrade(void) {
 	if (this->grade - 1 < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else {
@@ -61,7 +61,7 @@ void				Bureaucrat::incrementGrade(void) {
 	}
 }
 
-void				Bureaucrat::decrementGrade(void) {
+void	Bureaucrat::decrementGrade(void) {
 	if (this->grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	else {
@@ -71,7 +71,7 @@ void				Bureaucrat::decrementGrade(void) {
 	}
 }
 
-void				Bureaucrat::signForm(Form & target) {
+void	Bureaucrat::signForm(Form & target) {
 	try
 	{
 		target.beSigned(*this);
@@ -83,11 +83,11 @@ void				Bureaucrat::signForm(Form & target) {
 	}
 }
 
-const char *Bureaucrat::GradeTooHighException::what() const throw() {
+const char	*Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("Grade is too high!");
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const throw() {
+const char	*Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade is too low!");
 }
 
