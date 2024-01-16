@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
+#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 16:05:53 by dgerguri          #+#    #+#              #
-#    Updated: 2024/01/08 13:08:25 by dgerguri         ###   ########.fr        #
+#    Updated: 2024/01/16 17:59:28 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	=	bureaucrat
 
 # Name, compiler, and flags
 CC 		= 	c++
-CFLAGS	=	-Werror -Wextra -Wall
+CFLAGS	=	-Werror -Wextra -Wall -fsanitize=address -std=c++98
 
 # Source files
 SRC		=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
