@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:15 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/18 15:54:30 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/18 17:17:10 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,5 @@ AForm	*Intern::makeForm(std::string const &formName, std::string const &target)
 		case 3:
 			throw UnknownFormException();
 	}
-	// throw UnknownFormException();
 	return (NULL);
 }
