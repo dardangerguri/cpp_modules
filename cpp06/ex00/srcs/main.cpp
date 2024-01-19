@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:33:03 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/01/10 16:03:25 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:58:39 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 int main(int argc, char **argv) {
 	if (argc == 2) {
 		try {
-			Converter::
+			ScalarConverter scalarConverter;
+			scalarConverter.convert(argv[1]);
 		}
-		catch () {
+		catch (std::exception &e) {
 			std::cout << RED << "Input cannot be converted!" << RESET << std::endl;
 		}
 
 		return (0);
 	}
-	std::cout << "Usage: ./converter <toConvert>" << std::endl;
+	std::cout << YELLOW "Usage: ./converter <toConvert>"  RESET << std::endl;
 	return (1);
 }

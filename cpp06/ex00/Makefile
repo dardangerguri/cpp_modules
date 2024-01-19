@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
+#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/26 00:26:06 by dardangergu       #+#    #+#              #
-#    Updated: 2024/01/10 14:04:32 by dgerguri         ###   ########.fr        #
+#    Updated: 2024/01/19 14:47:08 by dardangergu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,14 @@ NAME	=	convert
 
 # Name, compiler, and flags
 CC 		= 	c++
-CFLAGS	=	-Werror -Wextra -Wall -std=c++98
+CFLAGS	=	-Werror -Wextra -Wall
 
 # Directories
 SRC_D	=	srcs/
 OBJ_D	=	obj/
 
 # Source files
-SRC		=	main.cpp ScalarCovnerter.cpp
+SRC		=	main.cpp ScalarConverter.cpp
 
 # Object files
 OBJ		=	$(SRC:.cpp=.o)
@@ -41,7 +41,7 @@ RESET	=	\033[0m
 all: $(NAME)
 
 # Compile source files to object files
-$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/ScalarCovnerter.hpp
+$(OBJ_D)%.o: $(SRC_D)%.cpp ./includes/ScalarConverter.hpp
 	@mkdir -p $(OBJ_D)
 	@$(CC) $(CFLAGS) $(INC_D) -c $< -o $@
 
