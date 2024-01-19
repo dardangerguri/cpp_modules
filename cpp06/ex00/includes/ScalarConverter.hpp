@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 00:32:49 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/01/19 17:19:02 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/19 17:46:05 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
-# include <string>
-# include <iomanip>
 # include <float.h>
-#include <limits>
 
 # define	GREEN	"\033[0;32m"
 # define	RED		"\033[0;31m"
