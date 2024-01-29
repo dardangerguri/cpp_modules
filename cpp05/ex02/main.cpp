@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:24 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/16 18:10:38 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/29 13:02:04 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "PresidentialPardonForm.hpp"
 
 int		main(void) {
-	Bureaucrat	bureaucrat1("Dardan", 142);
+	Bureaucrat	bureaucrat1("Dardan", 143);
 	Bureaucrat	bureaucrat2("Dgerguri", 65);
 	Bureaucrat	bureaucrat3("Dardi", 5);
 
@@ -34,11 +34,13 @@ int		main(void) {
 		<< RED << presidential << RESET << std::endl;
 
 	std::cout << YELLOW "Shrubbery Creation Form" RESET << std::endl;
+	bureaucrat3.executeForm(shrubbery);
 	bureaucrat1.signForm(shrubbery);
 	bureaucrat1.executeForm(shrubbery);
 	bureaucrat3.executeForm(shrubbery);
 
 	std::cout << std::endl << YELLOW "Robotomy Request Form" RESET << std::endl;
+	bureaucrat3.executeForm(robotomy);
 	bureaucrat3.signForm(robotomy);
 	bureaucrat2.executeForm(robotomy);
 	bureaucrat3.executeForm(robotomy);
@@ -47,6 +49,7 @@ int		main(void) {
 	std::cout << std::endl << YELLOW "Presidential Pardon Form" RESET << std::endl;
 	bureaucrat1.executeForm(presidential);
 	bureaucrat3.signForm(presidential);
+	bureaucrat2.executeForm(presidential);
 	bureaucrat3.executeForm(presidential);
 
 	std::cout << std::endl;
