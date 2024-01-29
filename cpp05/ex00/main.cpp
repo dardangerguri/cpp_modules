@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:24 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/15 14:43:58 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/29 11:40:11 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	testNameGradeConstructor(void) {
 		std::cerr << RED << "Creating bureaucrat " << name <<
 		" failed: " << e.what() << RESET << std::endl;
 	}
-	grade = 0;
+	grade = 3;
 	try {
 		Bureaucrat bureaucrat(name, grade);
 		std::cout << bureaucrat;
