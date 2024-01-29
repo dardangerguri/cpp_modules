@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:24 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/15 16:22:01 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/29 12:27:43 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	testCopyConstructor(void) {
 void	testAssignmentOperator(void) {
 	std::cout << YELLOW << "Test Assignment Operator" << RESET << std::endl;
 	Bureaucrat bureaucrat("TEST", 50);
-	Form form("TEST", 150, 2);
+	Form form("TEST", 150, 4);
 	bureaucrat.signForm(form);
 	Form form2("TEST2", 1, 3);
 	std::cout << form << form2;
@@ -89,7 +89,7 @@ void	testAssignmentOperator(void) {
 
 void	testSigning(void) {
 	std::cout << YELLOW << "Test Signing" << RESET << std::endl;
-	Bureaucrat bureaucrat("TEST", 50);
+	Bureaucrat bureaucrat("D", 50);
 	Form form("TEST", 150, 2);
 	std::cout << RED << form << RESET;
 	try {
@@ -114,7 +114,7 @@ void	testSigning(void) {
 	catch (std::exception &e) {
 		std::cerr << RED << "Form signing failed: " << e.what() << RESET << std::endl;
 	}
-	Form form3("TEST", 49, 60);
+	Form form3("TEST1", 40, 60);
 	std::cout << RED << form3 << RESET;
 	try {
 		bureaucrat.signForm(form3);
@@ -122,6 +122,15 @@ void	testSigning(void) {
 	}
 	catch (std::exception &e) {
 		std::cerr << RED << "Form " << form3.getName() << " signing failed: " << e.what() << RESET << std::endl;
+	}
+	Form form4("TEST2", 51, 60);
+	std::cout << RED << form4 << RESET;
+	try {
+		bureaucrat.signForm(form4);
+		std::cout << GREEN << form4 << RESET;
+	}
+	catch (std::exception &e) {
+		std::cerr << RED << "Form " << form4.getName() << " signing failed: " << e.what() << RESET << std::endl;
 	}
 }
 
