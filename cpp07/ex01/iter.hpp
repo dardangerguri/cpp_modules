@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/22 14:24:39 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/30 16:00:04 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,26 @@
 # define	YELLOW	"\033[0;33m"
 # define	RESET	"\033[0m"
 
-template< typename T > void iter(T *array, int len, void (*f)(T const &)) {
+template< typename T > void iter(T *array, int len, void (*f)(T &)) {
 	for (int i = 0; i < len; i++)
 		f(array[i]);
 }
 
-template< typename T > void print(T const &x) {
-	std::cout << x << std::endl;
+template< typename T > void print(T &x) {
+	std::cout << x << ' ';
 }
 
-template< typename T > void decrement(T const &x) {
-	std::cout << x - 1 << std::endl;
+template< typename T > void decrement(T &x) {
+	x = x - 1;
+}
+
+template< typename T > void capitalize(T &x) {
+	x = std::toupper(x);
+}
+
+template< typename T > void capitalizeString(T &x) {
+for (std::string::iterator it = x.begin(); it != x.end(); it++)
+		*it = std::toupper(*it);
 }
 
 # endif
