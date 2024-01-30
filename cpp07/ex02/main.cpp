@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:54:04 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/01/24 15:21:17 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/30 16:28:49 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ int	main(void)
             return 1;
         }
     }
+	// for (int i = 0; i < 2; i++)
+	// 	std::cout << numbers[i] << " | ";
+	// std::cout << std::endl;
     try
     {
         numbers[-2] = 0;
@@ -77,7 +80,6 @@ int	main(void)
 
 		d = b;
 
-		/* FILL ARRAYS */
 		for (int i = 0; i < 5; i++)
 			a[i] = i + 1;
 		for (int i = 0; i < 4; i++)

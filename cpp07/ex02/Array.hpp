@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/24 15:03:14 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/30 16:22:21 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ template <class T> class Array {
 		~Array(void);
 
 		T &operator[](unsigned int index) const;
-		unsigned int	getSize(void) const;
 
 		class OutOfBoundsException : public std::exception {
 			public:

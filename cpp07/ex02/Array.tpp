@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/24 14:59:44 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/01/30 16:22:15 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,6 @@ template <class T> T &Array<T>::operator[](unsigned int index) const {
 	if (index >= this->size)
 		throw Array::OutOfBoundsException();
 	return (this->array[index]);
-}
-
-template <class T> unsigned int Array<T>::getSize(void) const {
-	return (this->size);
 }
 
 # endif
