@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/25 18:08:05 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/01 13:37:00 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,17 @@ void	Span::addNumber(int n) {
 	this->v.push_back(n);
 }
 
+void	Span::addManyNumbers(int nNumbers)
+{
+	std::srand(std::time(NULL));
+	std::vector<int> randomNumbers;
+	for (int i = 0; i < nNumbers; i++)
+		randomNumbers.push_back(rand());
+	if (this->v.size() + randomNumbers.size() > this->N)
+		throw FullSpanException();
+	this->v.insert(this->v.end(), randomNumbers.begin(), randomNumbers.end());
+}
+
 int		Span::shortestSpan(void) {
 	if (this->v.size() <= 1)
 		throw Span::NoSpanException();
@@ -56,4 +67,10 @@ int 	Span::longestSpan(void) {
 	std::vector<int>	tmp(this->v);
 	std::sort(tmp.begin(), tmp.end());
 	return (tmp[tmp.size() - 1] - tmp[0]);
+}
+
+void	Span::displayVector(void) {
+	for (unsigned int i = 0; i < this->v.size(); i++)
+		std::cout << this->v[i] << " ";
+	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/25 18:08:22 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/01 13:35:05 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ class Span {
 		Span & operator=(Span const & copy);
 
 		void	addNumber(int n);
+		void	addManyNumbers(int nNumbers);
 		int		shortestSpan(void);
 		int		longestSpan(void);
+		void	displayVector(void);
 
 		class FullSpanException : public std::exception {
 			public:
