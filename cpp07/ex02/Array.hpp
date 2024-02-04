@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/30 16:22:21 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:13:20 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ template <class T> class Array {
 
 		class OutOfBoundsException : public std::exception {
 			public:
-				const char *what() const throw()
-				{
-					return ("Index out of bounds!");
-				}
+				virtual const char *what() const throw();
 		};
 };
 

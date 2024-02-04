@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 16:05:53 by dgerguri          #+#    #+#              #
-#    Updated: 2024/01/24 14:53:56 by dardangergu      ###   ########.fr        #
+#    Updated: 2024/02/04 19:03:05 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

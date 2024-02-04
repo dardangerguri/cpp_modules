@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/30 16:22:15 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/04 19:05:25 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ template <class T> Array<T>::Array(Array const &copy) : size(copy.size) {
 template <class T> Array<T> &Array<T>::operator=(Array const &src) {
 	if (this != &src) {
 		this->size = src.size;
+		delete this->array;
 		this->array = new T[this->size];
 		for (unsigned int i = 0; i < this->size; i++)
 			this->array[i] = src.array[i];
@@ -47,6 +48,10 @@ template <class T> T &Array<T>::operator[](unsigned int index) const {
 	if (index >= this->size)
 		throw Array::OutOfBoundsException();
 	return (this->array[index]);
+}
+
+template <class T> const char *Array<T>::OutOfBoundsException::what() const throw() {
+	return ("Index out of bond!");
 }
 
 # endif

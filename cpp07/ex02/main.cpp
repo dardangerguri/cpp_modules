@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:54:04 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/01/30 16:28:49 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/04 19:13:43 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,15 @@ int	main(void)
 		Array<int>	c(a);
 		Array<int>	d;
 
-		d = b;
-
 		for (int i = 0; i < 5; i++)
 			a[i] = i + 1;
 		for (int i = 0; i < 4; i++)
 			b[i] = i + 1;
 		for (int i = 0; i < 5; i++)
 			c[i] = i + 1;
-		for (int i = 0; i < 4; i++)
-			d[i] = i + 1;
+		d = b;
+		// for (int i = 0; i < 4; i++)
+		// 	d[i] = i + 5;
 
 		std::cout << YELLOW "Using constructor: " RESET << std::endl;
 		std::cout << BLUE "Array A: " RESET;
@@ -162,6 +161,19 @@ int	main(void)
 		for (int i = 0; i < 5; i++)
 			std::cout << d[i] << " | ";
 		std::cout << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+	std::cout << GREEN "EMPTY TEST" RESET << std::endl;
+	try {
+		Array<char>	a(5);
+		std::cout << a[2] << std::endl;
+		Array<int>	b(5);
+		std::cout << b[2] << std::endl;
+		std::cout << a[6] << std::endl;
+
 	}
 	catch(const std::exception& e)
 	{
