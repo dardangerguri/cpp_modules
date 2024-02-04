@@ -6,11 +6,28 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:24 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/30 16:05:40 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:12:40 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+template< typename T > void print(T &x) {
+	std::cout << x << ' ';
+}
+
+template< typename T > void decrement(T &x) {
+	x = x - 1;
+}
+
+template< typename T > void capitalize(T &x) {
+	x = std::toupper(x);
+}
+
+template< typename T > void capitalizeString(T &x) {
+for (std::string::iterator it = x.begin(); it != x.end(); it++)
+		*it = std::toupper(*it);
+}
 
 int main( void ) {
 

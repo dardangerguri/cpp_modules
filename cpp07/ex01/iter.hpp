@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/30 16:00:04 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:12:21 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,9 @@ template< typename T > void iter(T *array, int len, void (*f)(T &)) {
 		f(array[i]);
 }
 
-template< typename T > void print(T &x) {
-	std::cout << x << ' ';
-}
-
-template< typename T > void decrement(T &x) {
-	x = x - 1;
-}
-
-template< typename T > void capitalize(T &x) {
-	x = std::toupper(x);
-}
-
-template< typename T > void capitalizeString(T &x) {
-for (std::string::iterator it = x.begin(); it != x.end(); it++)
-		*it = std::toupper(*it);
+template< typename T > void iter(const T *array, int len, void (*f)(const T &)) {
+	for (int i = 0; i < len; i++)
+		f(array[i]);
 }
 
 # endif
