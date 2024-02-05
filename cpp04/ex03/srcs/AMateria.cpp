@@ -13,26 +13,26 @@
 #include "AMateria.hpp"
 
 AMateria::AMateria(void) {
-	std::cout << "AMateria default constructor called!" << std::endl;
+	std::cout << BLUE "AMateria default constructor called!" RESET << std::endl;
 	this->type = "Unknown AMateria";
 }
 
 AMateria::AMateria(std::string const & type) {
-	std::cout << "AMateria type constructor called!" << std::endl;
+	std::cout << BLUE "AMateria type constructor called!" RESET << std::endl;
 	this->type = type;
 }
 
 AMateria::AMateria(AMateria const & copy) {
-	std::cout << "AMateria copy constructor called!" << std::endl;
+	std::cout << BLUE "AMateria copy constructor called!" RESET << std::endl;
 	*this = copy;
 }
 
 AMateria::~AMateria(void) {
-	std::cout << "AMateria destructor called!" << std::endl;
+	std::cout << BLUE "AMateria destructor called!" RESET << std::endl;
 }
 
 AMateria & AMateria::operator=(const AMateria & copy) {
-	std::cout << "AMateria copy assignment operator called!" << std::endl;
+	std::cout << BLUE "AMateria copy assignment operator called!" RESET << std::endl;
 	if (this != &copy) {
 		this->type = copy.type;
 	}

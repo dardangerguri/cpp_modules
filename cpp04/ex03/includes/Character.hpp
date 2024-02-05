@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:59:46 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/29 18:34:14 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:20:12 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class	Character : public ICharacter {
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
-		AMateria* getInventory(int idx);
+
+		void displayCharacterInventory(void);
 
 	private:
 

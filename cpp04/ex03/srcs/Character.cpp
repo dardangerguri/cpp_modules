@@ -6,52 +6,51 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:00:02 by dgerguri          #+#    #+#             */
-/*   Updated: 2023/12/29 18:34:23 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:19:50 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(void) {
-	std::cout << "Character default constructor called!" << std::endl;
+	std::cout << BLUE "Character default constructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
 	this->name = "Default";
 }
 
 Character::Character(std::string const & name) {
-	std::cout << "Character name constructor called!" << std::endl;
+	std::cout << BLUE "Character name constructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
 	this->name = name;
 }
 
 Character::Character(Character const & copy) {
-	std::cout << "Character copy constructor called!" << std::endl;
+	std::cout << BLUE "Character copy constructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->inventory[i] = copy.inventory[i]->clone();
+		this->inventory[i] = NULL;
 	*this = copy;
 }
 
 Character::~Character(void) {
-	std::cout << "Character destructor called!" << std::endl;
+	std::cout << BLUE "Character destructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i] != NULL)
-		{
-			std::cout << "deleting " << i << std::endl;
 			delete this->inventory[i];
-			std::cout << "deleted " << i << std::endl;
-		}
 	}
 }
 
 Character & Character::operator=(const Character & copy) {
-	std::cout << "Character assignation operator called!" << std::endl;
-	if (this != &copy)
-	{
-		for (int i = 0; i < 4; i++)
+	std::cout << BLUE "Character assignation operator called!" RESET << std::endl;
+	this->name = copy.name;
+	for (int i = 0; i < 4; i++) {
+		if (this->inventory[i] != NULL)
 			delete this->inventory[i];
-		for (int i = 0; i < 4; i++)
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (copy.inventory[i] != NULL)
 			this->inventory[i] = copy.inventory[i]->clone();
 	}
 	return (*this);
@@ -104,13 +103,18 @@ void Character::use(int idx, ICharacter& target) {
 	}
 	else
 		std::cout << "There is nothing in the inventory" << std::endl;
-
 }
 
-AMateria* Character::getInventory(int idx) {
-	if (idx >= 0 || idx <= 4) {
-		std::cout << RED << "INVENTORY " << &this->inventory[idx] << RESET << std::endl;
-			return (this->inventory[idx]);
+void	Character::displayCharacterInventory(void)
+{
+	std::cout << this->name << "'s inventory: " << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << "\t[" << i << "] ";
+		if (this->inventory[i] == NULL)
+			std::cout << "Empty!";
+		else
+			std::cout << this->inventory[i]->getType() << " materia.";
+		std::cout << std::endl;
 	}
-	return (NULL);
 }

@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 01:58:16 by dardangergu       #+#    #+#             */
-/*   Updated: 2023/12/29 02:01:04 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/05 14:39:57 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure(void) {
-	std::cout << "Cure default constructor called!" << std::endl;
+	std::cout << BLUE "Cure default constructor called!" RESET << std::endl;
 	this->type = "cure";
 }
 
 Cure::Cure(Cure const & copy) {
-	std::cout << "Cure copy constructor called!" << std::endl;
+	std::cout << BLUE "Cure copy constructor called!" RESET << std::endl;
 	*this = copy;
 }
 
 Cure::~Cure(void) {
-	std::cout << "Cure destructor called!" << std::endl;
+	std::cout << BLUE "Cure destructor called!" RESET << std::endl;
 }
 
 Cure & Cure::operator=(const Cure & copy) {

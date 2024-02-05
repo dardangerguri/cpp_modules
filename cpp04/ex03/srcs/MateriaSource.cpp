@@ -13,20 +13,20 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void) {
-	std::cout << "MateriaSource default constructor called!" << std::endl;
+	std::cout << BLUE "MateriaSource default constructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & copy) {
-	std::cout << "MateriaSource copy constructor called!" << std::endl;
-	*this = copy;
+	std::cout << BLUE "MateriaSource copy constructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->inventory[i] = copy.inventory[i]->clone();
+		this->inventory[i] = NULL;
+	*this = copy;
 }
 
 MateriaSource::~MateriaSource(void) {
-	std::cout << "MateriaSource destructor called!" << std::endl;
+	std::cout << BLUE "MateriaSource destructor called!" RESET << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i] != NULL) {
 			delete this->inventory[i];
@@ -36,18 +36,21 @@ MateriaSource::~MateriaSource(void) {
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource & copy) {
-	std::cout << "MateriaSource copy assignment operator called!" << std::endl;
-	if (this != &copy)
-	{
-		for (int i = 0; i < 4; i++)
-			delete this->inventory[i];
-		for (int i = 0; i < 4; i++)
+	std::cout << BLUE "MateriaSource copy assignment operator called!" RESET << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete this->inventory[i];
+	for (int i = 0; i < 4; i++) {
+		if (copy.inventory[i] != NULL)
 			this->inventory[i] = copy.inventory[i]->clone();
 	}
 	return (*this);
 }
 
 void		MateriaSource::learnMateria(AMateria * m) {
+	if (!m) {
+		std::cout << "MateriaSource was not provided with a materia to learn!" << std::endl;
+		return ;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i] == NULL)
@@ -58,6 +61,7 @@ void		MateriaSource::learnMateria(AMateria * m) {
 		}
 	}
 	std::cout << "MateriaSource inventory full! Cannot learn the materia!" << std::endl;
+	delete m;
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type) {
@@ -68,6 +72,20 @@ AMateria*	MateriaSource::createMateria(std::string const & type) {
 			return (this->inventory[i]->clone());
 		}
 	}
-	std::cout << "MateriaSource inventory empty! Cannot create the materia!" << std::endl;
+	std::cout << "Unknown type! Cannot create the materia!" << std::endl;
 	return (NULL);
+}
+
+void	MateriaSource::displayInventory(void)
+{
+	std::cout << "MateriaSource has the following inventory: " << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << "\t[" << i << "] ";
+		if (this->inventory[i] == NULL)
+			std::cout << "Empty!";
+		else
+			std::cout << this->inventory[i]->getType() << " materia.";
+		std::cout << std::endl;
+	}
 }

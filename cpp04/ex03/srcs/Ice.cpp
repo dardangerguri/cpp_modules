@@ -6,24 +6,24 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 02:01:35 by dardangergu       #+#    #+#             */
-/*   Updated: 2023/12/29 15:14:14 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/05 14:39:07 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 Ice::Ice(void) {
-	std::cout << "Ice default constructor called!" << std::endl;
+	std::cout << BLUE "Ice default constructor called!" RESET << std::endl;
 	this->type = "ice";
 }
 
 Ice::Ice(Ice const & copy) {
-	std::cout << "Ice copy constructor called!" << std::endl;
+	std::cout << BLUE "Ice copy constructor called!" RESET << std::endl;
 	*this = copy;
 }
 
 Ice::~Ice(void) {
-	std::cout << "Ice destructor called!" << std::endl;
+	std::cout << BLUE "Ice destructor called!" RESET << std::endl;
 }
 
 Ice & Ice::operator=(const Ice & copy) {
