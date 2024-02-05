@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:59:53 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/02 15:24:28 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:28:20 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int	main(void)
 	delete cat;
 	delete wrongMeta;
 	delete wrongCat;
+	delete wrongCat2;
 
 	return (0);
 }
