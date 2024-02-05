@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:07:24 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/04 15:12:40 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:22:14 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int main( void ) {
 	std::cout <<std::endl << BLUE "  Array after capitalization: " RESET << std::endl;
 	iter(array_string, 6, ::capitalizeString);
 	iter(array_string, 6, ::print);
+	std::cout << std::endl;
 
 	return 0;
 }
