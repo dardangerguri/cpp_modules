@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:54:04 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/02/01 13:44:05 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/06 16:29:52 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int main(void) {
 		}
 		std::list<int> s(mstack);
 	}
+	std::cout << std::endl;
 	return (0);
 }
