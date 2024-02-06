@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/06 15:39:02 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:29:23 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 # include <iostream>
 # include <algorithm>
+
+template <typename T> int	easyfind(T &container, int n);
 
 # include "easyfind.tpp"
 
