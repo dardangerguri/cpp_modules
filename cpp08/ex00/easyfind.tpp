@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.tpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/24 16:26:23 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/06 15:39:06 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ template <typename T> int	easyfind(T &container, int n)
 
 	it = std::find(container.begin(), container.end(), n);
 	if (it == container.end())
-		throw OutOfRangeException();
+		throw std::runtime_error("Index out of bond!");
 	return (*it);
 }
 

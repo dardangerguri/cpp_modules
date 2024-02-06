@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/01/24 16:28:57 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/06 15:39:02 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,6 @@
 
 # include <iostream>
 # include <algorithm>
-
-class OutOfRangeException : public std::exception {
-	public:
-		const char *what() const throw()
-		{
-			return ("Not found in the container!");
-		}
-};
 
 # include "easyfind.tpp"
 
