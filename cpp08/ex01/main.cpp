@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:54:04 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/02/01 13:39:20 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/06 16:28:46 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int main(void) {
 		std::cout << YELLOW << "\tMy test" << RESET << std::endl;
 
 		try {
-			Span sp = Span(10000);
-			sp.addManyNumbers(10000);
+			Span sp = Span(10);
+			sp.addManyNumbers(10);
 			sp.displayVector();
 			std::cout << RED << sp.shortestSpan() << RESET << std::endl;
 			std::cout << GREEN << sp.longestSpan() << RESET << std::endl;

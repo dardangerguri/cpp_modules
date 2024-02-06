@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/01 13:37:00 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/06 16:25:17 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,12 @@ void	Span::displayVector(void) {
 	for (unsigned int i = 0; i < this->v.size(); i++)
 		std::cout << this->v[i] << " ";
 	std::cout << std::endl;
+}
+
+const char	*Span::FullSpanException::what() const throw() {
+	return ("Span is full");
+}
+
+const char	*Span::NoSpanException::what() const throw() {
+	return ("Span is empty or contains only one element");
 }

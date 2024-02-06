@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/01 13:35:05 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/06 16:30:52 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SPAN_HPP
 
 # include <iostream>
+# include <vector>
 
 # define	GREEN	"\033[0;32m"
 # define	RED		"\033[0;31m"
@@ -40,16 +41,12 @@ class Span {
 
 		class FullSpanException : public std::exception {
 			public:
-				const char* what() const throw() {
-					return "Span is full";
-				}
+				virtual const char *what() const throw();
 		};
 
 		class NoSpanException : public std::exception {
 			public:
-				const char* what() const throw() {
-					return "Span is empty or contains only one element";
-				}
+				virtual const char *what() const throw();
 		};
 
 	private:
