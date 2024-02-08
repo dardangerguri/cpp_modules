@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/08 11:54:37 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/08 17:50:37 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,28 @@
 
 
 # include <iostream>
+# include <list>
+# include <cctype>
 
 class RPN {
 
 	public:
 
+		RPN(std::string input);
+		~RPN(void);
+
 	private:
 
+		RPN(void);
+		RPN(RPN const &copy);
+		RPN &operator=(RPN const &src);
 
-}
+		void	validateInputandFillContainer(std::string &input);
+		void	insertSpace(std::string &input);
+		void	fillContainer(std::string &value);
+
+		std::list<int> arguments;
+
+};
 
 # endif

@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+         #
+#    By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 16:05:53 by dgerguri          #+#    #+#              #
-#    Updated: 2024/02/08 11:54:58 by dardangergu      ###   ########.fr        #
+#    Updated: 2024/02/08 13:46:46 by dgerguri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Output binary name
-NAME	=	easy
+NAME	=	RPN
 
 # Name, compiler, and flags
 CC 		= 	c++
