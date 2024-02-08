@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/08 17:50:37 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:47:06 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # include <iostream>
 # include <list>
+# include <stack>
 # include <cctype>
 
 class RPN {
@@ -37,11 +38,15 @@ class RPN {
 		RPN(RPN const &copy);
 		RPN &operator=(RPN const &src);
 
-		void	validateInputandFillContainer(std::string &input);
-		void	insertSpace(std::string &input);
-		void	fillContainer(std::string &value);
+		void	validateAndProcessInput(std::string &input);
+		void	insertSpacesAroundOperators(std::string &input);
+		void	processToken(std::string &token);
 
-		std::list<int> arguments;
+		void	performOperations(void);
+
+		void	displayStack(void); //delete
+
+		std::list<double> arguments;
 
 };
 
