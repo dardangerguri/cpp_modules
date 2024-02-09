@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:54:04 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/02/09 11:16:14 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/09 16:20:31 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int	main(int argc, char **argv) {
 		if (argc != 2)
 			throw BitcoinExchange::InvalidFile();
 		BitcoinExchange btc;
-		(void)argv; //delete
-		// btc.exchange(argv[1]);
+		btc.valueOfBitcoin(argv[1]);
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;

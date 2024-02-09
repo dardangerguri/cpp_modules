@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/09 11:15:51 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/09 16:37:09 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <fstream>
 # include <map>
 
+# include <unordered_map>
+
 class BitcoinExchange {
 
 	public:
@@ -32,7 +34,7 @@ class BitcoinExchange {
 		~BitcoinExchange(void);
 
 
-		// void		exchange(char *filename);
+		void		valueOfBitcoin(char *filename);
 
 
 		class InvalidFile : public std::exception {
@@ -51,6 +53,9 @@ class BitcoinExchange {
 
 		void		loadDataFromFile(void);
 		void		displayData(void); //delete
+		time_t		convertDateToTimeT(std::string date);
+		std::string	convertTimeTToDate(time_t date);
+		void		displayValue(time_t date, double value);
 };
 
 # endif
