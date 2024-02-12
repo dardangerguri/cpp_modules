@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/09 16:37:09 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/12 12:00:14 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # include <iostream>
 # include <fstream>
 # include <map>
+# include <string>
+# include <sstream>
 
 # include <unordered_map>
 
