@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 12:00:14 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/12 22:01:52 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ class BitcoinExchange {
 		BitcoinExchange(void);
 		~BitcoinExchange(void);
 
-
-		void		valueOfBitcoin(char *filename);
-
+		void	calculateBitcoinValue(char *filename);
 
 		class InvalidFile : public std::exception {
 			public:
@@ -47,17 +45,15 @@ class BitcoinExchange {
 
 	private:
 
-	//COPY CONSTRUCTOR AND ASSIGNATION OPERATOR OVERLOAD : not needed
 		BitcoinExchange(BitcoinExchange const & copy);
 		BitcoinExchange & operator=(const BitcoinExchange & copy);
 
 		std::map<time_t, double>exchangeRatesByDates;
 
 		void		loadDataFromFile(void);
-		void		displayData(void); //delete
-		time_t		convertDateToTimeT(std::string date);
+		time_t		convertStringToTimeT(std::string date);
 		std::string	convertTimeTToDate(time_t date);
-		void		displayValue(time_t date, double value);
+		void		displayBitcoinValue(time_t date, double value);
 };
 
 # endif
