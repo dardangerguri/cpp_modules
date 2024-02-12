@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 16:55:44 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/12 21:47:54 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 
 
 # include <iostream>
-# include <fstream>
 # include <sstream>
 # include <vector>
 # include <deque>
+# include <chrono>
 
 class PmergeMe {
 
@@ -39,20 +39,22 @@ class PmergeMe {
 		PmergeMe(PmergeMe const &copy);
 		PmergeMe &operator=(PmergeMe const &src);
 
-		void	validateInput(char **argv);
-		int		checkInt(std::string);
-		void	checkDoubles(int number);
-		void	sortAlgorithm();
-		void	sortVector(std::vector<int> &vector);
-		void	combineVectors(std::vector<int> &vector, std::vector<int> &left, std::vector<int> &right);
-
 		std::vector<int> vector;
 		std::deque<int> deque;
 
+		void	validateInput(char **argv);
+		int		convertStringToInt(std::string str);
+		void	checkForDuplicates(int number);
 
-		void displayContentVector(); //delete
-		void displayContentDeque(); //delete
+		void 	sortAndDisplay();
 
+		void	sortVector(std::vector<int> &vector);
+		void	sortDeque(std::deque<int> &deque);
+		void	mergeVectors(std::vector<int> &vector, std::vector<int> &left, std::vector<int> &right);
+		void	mergeDeques(std::deque<int> &deque, std::deque<int> &left, std::deque<int> &right);
+
+		void 	displayContent(const std::vector<int>& container);
+		void 	displayContent(const std::deque<int>& container);
 
 
 };

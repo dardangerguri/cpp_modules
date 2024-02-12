@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 18:07:50 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/12 21:51:34 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,135 +14,26 @@
 
 PmergeMe::PmergeMe(char **argv) {
 	validateInput(argv);
-	displayContentVector(); //delete
-	sortAlgorithm();
+	sortAndDisplay();
 }
 
 PmergeMe::~PmergeMe(void) {
 }
 
-void PmergeMe::displayContentVector()
-{
-    for (const auto& element : vector) {
-        std::cout << element << " ";
-    }
-	std::cout << std::endl;
-}
-
-void PmergeMe::displayContentDeque()
-{
-    for (const auto& element : deque) {
-        std::cout << element << " ";
-    }
-	std::cout << std::endl;
-}
-
-
-//SORT
-
-void	PmergeMe::sortAlgorithm() {
-	std::cout << GREEN "Sorting with std::vector\n" RESET
-	<< "Before: ";
-	displayContentVector();
-	sortVector(vector);
-	std::cout << "After: ";
-	displayContentVector();
-
-
-
-	// std::cout << std::endl << GREEN "Sorting with std::deque\n" RESET
-	// << "Before: ";
-	// displayContentDeque();
-	// // sortDeque();
-	// std::cout << "After: ";
-	// displayContentVector();
-
-	// std::cout << std::endl << "Time to process a range of " << vector.size() << " elements with std::vector : " << std::endl;
-	// std::cout << "Time to process a range of " << deque.size() << " elements with std::deque : " << std::endl;
-}
-
-
-void	PmergeMe::sortVector(std::vector<int> &vector) {
-
-
-	if (vector.size() == 1)
-		return ;
-	int	middle = vector.size() / 2;
-
-	std::vector<int> left = std::vector<int>(vector.begin(), vector.begin() + middle);
-	std::vector<int> right = std::vector<int>(vector.begin() + middle, vector.end());
-	sortVector(left);
-	sortVector(right);
-	combineVectors(vector, left, right);
-	// for (const auto& element : vector) {
-	// 	std::cout << element << " ";
-	// }
-	// std::cout << std::endl;
-}
-
-
-void	PmergeMe::combineVectors(std::vector<int> &vector, std::vector<int> &left, std::vector<int> &right) {
-
-	size_t v = 0;
-	size_t l = 0;
-	size_t r = 0;
-
-	for (const auto& element : left) {
-		std::cout << element << " ";
-	}
-	std::cout << "       ";
-
-	for (const auto& element : right) {
-		std::cout << element << " ";
-	}
-	std::cout << "       ";
-	while (l < left.size() && r < right.size()) {
-		if (left[l] > right[r]) {
-			std::cout << " 1 ";
-			vector[v] = right[r];
-			v++;
-			vector[v] = left[r];
-			// vector[v] = left[l];
-			// v++;
-			// r++;
-			l++;
-		}
-		else {
-			std::cout << " 2 ";
-			vector[v] = left[r];
-			v++;
-			// v++;
-			// v++;
-			// l++;
-			r++;
-		}
-			// r++;
-			// l++;
-	}
-
-	for (const auto& element : vector) {
-		std::cout << RED << element << " ";
-	}
-	std::cout << "       " RESET;
-std::cout << std::endl;
-	// if ()
-
-
-}
-
-
-// VALIDATE
-
-void	PmergeMe::checkDoubles(int number)
-{
-	for (std::vector<int>::iterator it = vector.begin(); it != vector.end(); it++)
+void	PmergeMe::validateInput(char **argv) {
+	int i = 1;
+	int number;
+	while (argv[i] != NULL)
 	{
-		if (number == *it)
-			throw std::runtime_error("Error: Invalid input!");
+		number = convertStringToInt(argv[i]);
+		checkForDuplicates(number);
+		vector.push_back(number);
+		deque.push_back(number);
+		i++;
 	}
 }
 
-int	PmergeMe::checkInt(std::string str) {
+int	PmergeMe::convertStringToInt(std::string str) {
 	std::stringstream s;
 	s << str;
 	int n;
@@ -153,15 +44,152 @@ int	PmergeMe::checkInt(std::string str) {
 	return (n);
 }
 
-void	PmergeMe::validateInput(char **argv) {
-	int i = 1;
-	int number;
-	while (argv[i] != NULL)
-	{
-		number = checkInt(argv[i]);
-		checkDoubles(number);
-		vector.push_back(number);
-		deque.push_back(number);
-		i++;
+void	PmergeMe::checkForDuplicates(int number) {
+	for (const auto& element : vector) {
+		if (number == element) {
+			throw std::runtime_error("Error: Duplicate input!");
+		}
+	}
+}
+
+void PmergeMe::sortAndDisplay() {
+    std::cout << GREEN << "Sorting with std::vector\n" << RESET
+              << "Before: ";
+    displayContent(vector);
+	std::chrono::high_resolution_clock::time_point vecStart, vecEnd;
+	vecStart = std::chrono::high_resolution_clock::now();
+    sortVector(vector);
+	vecEnd = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::micro> vecElapsedTime = vecEnd - vecStart;
+    std::cout << "After: ";
+    displayContent(vector);
+
+    std::cout << GREEN << "Sorting with std::deque\n" << RESET
+              << "Before: ";
+    displayContent(deque);
+	std::chrono::high_resolution_clock::time_point deqStart, deqEnd;
+	deqStart = std::chrono::high_resolution_clock::now();
+    sortDeque(deque);
+	deqEnd = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<double, std::micro> deqElapsedTime = deqEnd - deqStart;
+    std::cout << "After: ";
+    displayContent(deque);
+
+	std::cout << YELLOW << "Time to process a range of " << vector.size()
+	<< " elements with std::vector : " << vecElapsedTime.count() << " us" << RESET << std::endl;
+
+	std::cout << YELLOW << "Time to process a range of " << deque.size()
+	<< " elements with std::deque : " << deqElapsedTime.count() << " us" << RESET << std::endl;
+}
+
+void PmergeMe::displayContent(const std::vector<int>& container) {
+    for (const auto& element : container) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+}
+
+void PmergeMe::displayContent(const std::deque<int>& container) {
+    for (const auto& element : container) {
+        std::cout << element << " ";
+    }
+    std::cout << std::endl;
+}
+
+void	PmergeMe::sortVector(std::vector<int> &vector) {
+	if (vector.size() == 1)
+		return ;
+	int	middle = vector.size() / 2;
+	std::vector<int> left = std::vector<int>(vector.begin(), vector.begin() + middle);
+	std::vector<int> right = std::vector<int>(vector.begin() + middle, vector.end());
+	sortVector(left);
+	sortVector(right);
+	mergeVectors(vector, left, right);
+}
+
+void	PmergeMe::sortDeque(std::deque<int> &deque) {
+	if (deque.size() == 1)
+		return ;
+	int	middle = deque.size() / 2;
+	std::deque<int> left = std::deque<int>(deque.begin(), deque.begin() + middle);
+	std::deque<int> right = std::deque<int>(deque.begin() + middle, deque.end());
+	sortDeque(left);
+	sortDeque(right);
+	mergeDeques(deque, left, right);
+}
+
+void	PmergeMe::mergeVectors(std::vector<int> &vector, std::vector<int> &left, std::vector<int> &right) {
+	size_t l = 0;
+	size_t r = 0;
+	size_t v = 0;
+	while (l < left.size() && r < right.size()) {
+		if (left[l] < right[r]) {
+			vector[v] = left[l];
+			l++;
+		}
+		else {
+			vector[v] = right[r];
+			r++;
+		}
+		v++;
+	}
+	while (l < left.size()) {
+		vector[v] = left[l];
+		l++;
+		v++;
+	}
+	while (r < right.size()) {
+		vector[v] = right[r];
+		r++;
+		v++;
+	}
+	// std::vector<int> temp;
+	// size_t l = 0;
+	// size_t r = 0;
+	// while (l < left.size() && r < right.size()) {
+	// 	if (left[l] < right[r]) {
+	// 		temp.push_back(left[l]);
+	// 		l++;
+	// 	}
+	// 	else {
+	// 		temp.push_back(right[r]);
+	// 		r++;
+	// 	}
+	// }
+	// while (l < left.size()) {
+	// 	temp.push_back(left[l]);
+	// 	l++;
+	// }
+	// while (r < right.size()) {
+	// 	temp.push_back(right[r]);
+	// 	r++;
+	// }
+	// vector = temp;
+}
+
+void	PmergeMe::mergeDeques(std::deque<int> &deque, std::deque<int> &left, std::deque<int> &right) {
+	size_t l = 0;
+	size_t r = 0;
+	size_t v = 0;
+	while (l < left.size() && r < right.size()) {
+		if (left[l] < right[r]) {
+			deque[v] = left[l];
+			l++;
+		}
+		else {
+			deque[v] = right[r];
+			r++;
+		}
+		v++;
+	}
+	while (l < left.size()) {
+		deque[v] = left[l];
+		l++;
+		v++;
+	}
+	while (r < right.size()) {
+		deque[v] = right[r];
+		r++;
+		v++;
 	}
 }
