@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/13 14:11:29 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:16:22 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ std::string	BitcoinExchange::convertTimeTToDate(time_t date) {
 
 void	BitcoinExchange::displayBitcoinValue(time_t date, double value) {
 		double closestValue = 0;
-		for (auto it = exchangeRatesByDates.begin(); it != exchangeRatesByDates.end(); it++) {
+		for (std::map<time_t, double>::iterator it = exchangeRatesByDates.begin(); it != exchangeRatesByDates.end(); it++) {
 			if (it->first >= date) {
 				if (it->first != date)
 					it--;
