@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/13 14:35:17 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:11:28 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	PmergeMe::convertStringToInt(std::string str) {
 }
 
 void	PmergeMe::checkForDuplicates(int number) {
-	for (const auto& element : vector) {
-		if (number == element) {
-			throw std::runtime_error("Error: Duplicate input!");
+		for (std::vector<int>::const_iterator it = vector.begin(); it != vector.end(); ++it) {
+			if (number == *it) {
+				throw std::runtime_error("Error: Duplicate input!");
 		}
 	}
 }
@@ -83,15 +83,15 @@ void PmergeMe::sortAndDisplay() {
 }
 
 void PmergeMe::displayContent(const std::vector<int>& container) {
-    for (const auto& element : container) {
-        std::cout << element << " ";
+	for (std::vector<int>::const_iterator it = container.begin(); it != container.end(); ++it) {
+        std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
 
 void PmergeMe::displayContent(const std::deque<int>& container) {
-    for (const auto& element : container) {
-        std::cout << element << " ";
+    for (std::deque<int>::const_iterator it = container.begin(); it != container.end(); ++it) {
+        std::cout << *it << " ";
     }
     std::cout << std::endl;
 }
