@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:54:04 by dardangergu       #+#    #+#             */
-/*   Updated: 2024/02/12 22:02:16 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/13 14:08:28 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

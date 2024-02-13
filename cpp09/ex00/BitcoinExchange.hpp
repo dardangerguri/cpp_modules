@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 22:01:52 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/13 14:07:41 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@
 # include <string>
 # include <sstream>
 
-# include <unordered_map>
-
 class BitcoinExchange {
 
 	public:
@@ -41,7 +39,6 @@ class BitcoinExchange {
 			public:
 				virtual const char *what() const throw();
 		};
-
 
 	private:
 

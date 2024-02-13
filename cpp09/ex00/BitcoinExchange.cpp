@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 22:10:18 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/13 14:11:29 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ time_t	BitcoinExchange::convertStringToTimeT(std::string date) {
 	std::tm tm = {};
     std::istringstream ss(date);
     ss >> std::get_time(&tm, "%Y-%m-%d");
-
     if (ss.fail())
         return -1;
     time_t t = mktime(&tm);
