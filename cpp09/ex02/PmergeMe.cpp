@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 21:51:34 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/13 13:19:35 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,28 +143,6 @@ void	PmergeMe::mergeVectors(std::vector<int> &vector, std::vector<int> &left, st
 		r++;
 		v++;
 	}
-	// std::vector<int> temp;
-	// size_t l = 0;
-	// size_t r = 0;
-	// while (l < left.size() && r < right.size()) {
-	// 	if (left[l] < right[r]) {
-	// 		temp.push_back(left[l]);
-	// 		l++;
-	// 	}
-	// 	else {
-	// 		temp.push_back(right[r]);
-	// 		r++;
-	// 	}
-	// }
-	// while (l < left.size()) {
-	// 	temp.push_back(left[l]);
-	// 	l++;
-	// }
-	// while (r < right.size()) {
-	// 	temp.push_back(right[r]);
-	// 	r++;
-	// }
-	// vector = temp;
 }
 
 void	PmergeMe::mergeDeques(std::deque<int> &deque, std::deque<int> &left, std::deque<int> &right) {

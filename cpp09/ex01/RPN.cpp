@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/09 00:03:40 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/13 13:15:53 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void 	RPN::insertSpacesAroundOperators(std::string &input) {
 void RPN::processToken(std::string &token) {
 	static int tokenIndex = 0;
 
-	// std::cout << "Token: " << token << std::endl; //delete
 	if (tokenIndex == 0 || tokenIndex == 1 || tokenIndex % 2 != 0) {
 		if (token.length() == 1 && std::isdigit(token[0]))
 			arguments.push_back(std::stod(token));
@@ -70,19 +69,7 @@ void RPN::processToken(std::string &token) {
 	tokenIndex++;
 }
 
-//delete
-void RPN::displayStack() {
-    std::list<double> temp = arguments; // Create a copy of the original stack
-
-    while (!temp.empty()) {
-        std::cout << *temp.begin() << std::endl;
-        temp.pop_front();
-    }
-}
-
 void RPN::performOperations(void) {
-	std::cout << "Performing operations..." << std::endl; //delete
-	displayStack(); //delete
 	while (arguments.size() >= 3) {
 		double operand1 = *arguments.begin();
 		arguments.pop_front();
@@ -91,9 +78,6 @@ void RPN::performOperations(void) {
 		char op = static_cast<char>(*arguments.begin());
 		arguments.pop_front();
 
-		std::cout << "Operand1: " << operand1 << std::endl; //delete
-		std::cout << "Operand2: " << operand2 << std::endl; //delete
-		std::cout << "Operator: " << op << std::endl; //delete
 		switch (op) {
 			case '+':
 				arguments.push_front(operand1 + operand2);
