@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/13 13:15:45 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:24:26 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ class RPN {
 		void	insertSpacesAroundOperators(std::string &input);
 		void	processToken(std::string &token);
 
-		void	performOperations(void);
+		void	performOperation(char op);
 
-		std::list<double> arguments;
+		std::stack<double> arguments;
 
 };
 
