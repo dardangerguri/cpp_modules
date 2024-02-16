@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
+/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/12 21:47:54 by dardangergu      ###   ########.fr       */
+/*   Updated: 2024/02/16 16:33:23 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ class PmergeMe {
 		void 	displayContent(const std::vector<int>& container);
 		void 	displayContent(const std::deque<int>& container);
 
+
+		std::vector<std::pair<int, int>> makePairs(std::vector<int> &vector);
+		std::vector<std::pair<int, int>> sortPairs(std::vector<int> &pairs);
 
 };
 
