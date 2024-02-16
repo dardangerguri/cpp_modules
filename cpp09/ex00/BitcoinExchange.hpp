@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/13 14:07:41 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:50:26 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ class BitcoinExchange {
 		time_t		convertStringToTimeT(std::string date);
 		std::string	convertTimeTToDate(time_t date);
 		void		displayBitcoinValue(time_t date, double value);
+		double		convertStringToDouble(std::string value);
 };
 
 # endif
