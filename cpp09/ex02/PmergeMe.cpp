@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/16 16:50:29 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/19 09:58:00 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,30 @@ std::vector<std::pair<int, int>> PmergeMe::makePairs(std::vector<int> &vector) {
 	return (pairs);
 }
 
-std::vector<std::pair<int, int>> PmergeMe::sortPairs(std::vector<int> &pairs) {
+void PmergeMe::sortPairs(std::vector<std::pair<int, int>> &pairs, int length) {
+	if (length == 0)
+		return ;
+	sortPairs(pairs, length - 1);
+	std::pair<int, int> key = pairs[length];
+	int i = length - 1;
+	while (i >= 0 && pairs[i].second > key.second) {
+		pairs[i + 1] = pairs[i];
+		i--;
+	}
+	pairs[i + 1] = key;
+}
 
-	while (pairs.second())
+void PmergeMe::createSortedSequence(std::vector<std::pair<int, int>> &pairs) {
+	vector.clear();
+	std::vector<int> pend;
+	for (size_t i = 0; i < pairs.size(); i++) {
+		vector.push_back(pairs[i].second);
+		pend.push_back(pairs[i].first);
+	}
+	int s1 = pend.front();
+	pend.erase(pend.begin());
+	vector.insert(vector.begin(), s1);
+
 }
 
 void	PmergeMe::sortVector(std::vector<int> &vector) {
@@ -127,24 +148,19 @@ void	PmergeMe::sortVector(std::vector<int> &vector) {
 
 	std::vector<std::pair<int, int>> pairs = makePairs(vector);
 	    for (const auto& pair : pairs) {
-        std::cout << "(" << pair.first << ", " << pair.second << ")" << std::endl;
+        std::cout << RED << "(" << pair.first << ", " << pair.second << ")" RESET << std::endl;
     }
 
-
 	// RECURSIVELY SORT PAIRS BASED ON TE GREATER PART!!!!
-	std::vector<std::pair<int, int>> sortedPairs = sortPairs(pairs);
+		sortPairs(pairs, (pairs.size() - 1));
+	 	for (const auto& pair : pairs) {
+        std::cout << BLUE << "(" << pair.first << ", " << pair.second << ")" RESET << std::endl;
+	}
 
+	// CREATE A SORTED S SEQUENCE!!!
+	createSortedSequence(pairs);
 
-
-
-	// if (vector.size() == 1)
-	// 	return ;
-	// int	middle = vector.size() / 2;
-	// std::vector<int> left = std::vector<int>(vector.begin(), vector.begin() + middle);
-	// std::vector<int> right = std::vector<int>(vector.begin() + middle, vector.end());
-	// sortVector(left);
-	// sortVector(right);
-	// mergeVectors(vector, left, right);
+	(void)straggler;
 }
 
 void	PmergeMe::sortDeque(std::deque<int> &deque) {
@@ -157,57 +173,3 @@ void	PmergeMe::sortDeque(std::deque<int> &deque) {
 	sortDeque(right);
 	// mergeDeques(deque, left, right);
 }
-
-// void	PmergeMe::mergeVectors(std::vector<int> &vector, std::vector<int> &left, std::vector<int> &right) {
-// 	size_t l = 0;
-// 	size_t r = 0;
-// 	size_t v = 0;
-// 	while (l < left.size() && r < right.size()) {
-// 		if (left[l] < right[r]) {
-// 			vector[v] = left[l];
-// 			l++;
-// 		}
-// 		else {
-// 			vector[v] = right[r];
-// 			r++;
-// 		}
-// 		v++;
-// 	}
-// 	while (l < left.size()) {
-// 		vector[v] = left[l];
-// 		l++;
-// 		v++;
-// 	}
-// 	while (r < right.size()) {
-// 		vector[v] = right[r];
-// 		r++;
-// 		v++;
-// 	}
-// }
-
-// void	PmergeMe::mergeDeques(std::deque<int> &deque, std::deque<int> &left, std::deque<int> &right) {
-// 	size_t l = 0;
-// 	size_t r = 0;
-// 	size_t v = 0;
-// 	while (l < left.size() && r < right.size()) {
-// 		if (left[l] < right[r]) {
-// 			deque[v] = left[l];
-// 			l++;
-// 		}
-// 		else {
-// 			deque[v] = right[r];
-// 			r++;
-// 		}
-// 		v++;
-// 	}
-// 	while (l < left.size()) {
-// 		deque[v] = left[l];
-// 		l++;
-// 		v++;
-// 	}
-// 	while (r < right.size()) {
-// 		deque[v] = right[r];
-// 		r++;
-// 		v++;
-// 	}
-// }

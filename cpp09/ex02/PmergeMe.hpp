@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dardangerguri <dardangerguri@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/16 16:33:23 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/19 09:28:32 by dardangergu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,13 @@ class PmergeMe {
 
 
 		std::vector<std::pair<int, int>> makePairs(std::vector<int> &vector);
-		std::vector<std::pair<int, int>> sortPairs(std::vector<int> &pairs);
+		// std::vector<std::pair<int, int>> sortPairs(std::vector<std::pair<int, int>> &pairs, int length);
+		void sortPairs(std::vector<std::pair<int, int>> &pairs, int length);
+		void createSortedSequence(std::vector<std::pair<int, int>> &pairs);
+
+		std::vector<int> buildJacobInsertionSequence(std::vector<int> pend, int length);
+		int jacobsthal(int n);
+
 
 };
 
