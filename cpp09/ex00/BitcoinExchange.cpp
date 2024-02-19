@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/16 12:28:59 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/19 21:24:46 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	BitcoinExchange::loadDataFromFile(void) {
 			time_t date = convertStringToTimeT(line.substr(0, line.find(",")));
 			if (date == -1)
 				throw BitcoinExchange::InvalidFile();
-			double value = std::stod(line.substr(line.find(",") + 1));
+			double value = convertStringToDouble(line.substr(line.find(",") + 1));
 			if (value == -1)
 				throw BitcoinExchange::InvalidFile();
 			exchangeRatesByDates.insert(std::pair<time_t, double>(date, value));
@@ -76,6 +76,24 @@ void	BitcoinExchange::calculateBitcoinValue(char *filename) {
 		file.close();
 }
 
+void	BitcoinExchange::displayBitcoinValue(time_t date, double value) {
+		std::map<time_t, double>::iterator closestDate = exchangeRatesByDates.lower_bound(date);
+		double closestValue = closestDate->second;
+		if (closestDate == exchangeRatesByDates.begin())
+			closestValue = 0;
+		else if (closestDate->first != date)
+			closestValue = std::prev(closestDate)->second;
+		if (value > 0 && value < 1000) {
+			std::cout << convertTimeTToDate(date) << " => " << value << " = " << closestValue * value << std::endl;
+		}
+		else if (value <= 0) {
+			std::cerr << RED "Error: not a positive number." RESET << std::endl;
+		}
+		else if (value >= 1000) {
+			std::cerr << RED "Error: too large a number." RESET << std::endl;
+		}
+}
+
 time_t	BitcoinExchange::convertStringToTimeT(std::string date) {
 	std::tm tm = {};
     std::istringstream ss(date);
@@ -93,20 +111,6 @@ std::string	BitcoinExchange::convertTimeTToDate(time_t date) {
 	char buffer[80];
 	strftime(buffer, 80, "%Y-%m-%d", localtime(&date));
 	return buffer;
-}
-
-void	BitcoinExchange::displayBitcoinValue(time_t date, double value) {
-		std::map<time_t, double>::iterator closestDate = exchangeRatesByDates.lower_bound(date);
-			double closestValue = std::prev(closestDate)->second;
-		if (value > 0 && value < 1000) {
-			std::cout << convertTimeTToDate(date) << " => " << value << " = " << closestValue * value << std::endl;
-		}
-		else if (value <= 0) {
-			std::cerr << RED "Error: not a positive number." RESET << std::endl;
-		}
-		else if (value >= 1000) {
-			std::cerr << RED "Error: too large a number." RESET << std::endl;
-		}
 }
 
 double BitcoinExchange::convertStringToDouble(std::string value) {
