@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/16 14:24:26 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/19 19:26:18 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 
 
 # include <iostream>
-# include <list>
 # include <stack>
 # include <cctype>
 
@@ -41,7 +40,6 @@ class RPN {
 		void	validateAndProcessInput(std::string &input);
 		void	insertSpacesAroundOperators(std::string &input);
 		void	processToken(std::string &token);
-
 		void	performOperation(char op);
 
 		std::stack<double> arguments;

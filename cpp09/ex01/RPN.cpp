@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/16 15:13:51 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/19 18:48:43 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void 	RPN::insertSpacesAroundOperators(std::string &input) {
 }
 
 void RPN::processToken(std::string &token) {
-	// std::cout << token << std::endl;
-
 	if (token.length() == 1 && std::isdigit(token[0]))
 		arguments.push(std::stod(token));
 	else if (token.length() == 1 && (token[0] == '+' || token[0] == '-' || token[0] == '*' || token[0] == '/'))
