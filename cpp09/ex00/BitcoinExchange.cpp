@@ -6,7 +6,7 @@
 /*   By: dgerguri <dgerguri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:06:49 by dgerguri          #+#    #+#             */
-/*   Updated: 2024/02/19 21:24:46 by dgerguri         ###   ########.fr       */
+/*   Updated: 2024/02/20 12:21:48 by dgerguri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	BitcoinExchange::calculateBitcoinValue(char *filename) {
 void	BitcoinExchange::displayBitcoinValue(time_t date, double value) {
 		std::map<time_t, double>::iterator closestDate = exchangeRatesByDates.lower_bound(date);
 		double closestValue = closestDate->second;
-		if (closestDate == exchangeRatesByDates.begin())
+		if (closestDate == exchangeRatesByDates.begin() && date < closestDate->first)
 			closestValue = 0;
 		else if (closestDate->first != date)
 			closestValue = std::prev(closestDate)->second;
